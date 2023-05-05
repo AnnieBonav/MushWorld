@@ -8,8 +8,19 @@ public class MushController : MonoBehaviour
     [SerializeField] private float _rotationSensitivity = 5;
     private Rigidbody _rb;
     private Transform _transform;
+    private Vector3 _impulse;
     private Vector3 _movement;
     private Vector3 _rotation;
+
+    public Vector3 Movement
+    {
+        get { return _movement; }
+    }
+
+    public Vector3 Rotation
+    {
+        get { return _rotation; }
+    }
 
     private void Awake()
     {
@@ -19,20 +30,20 @@ public class MushController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rb.AddForce(_movement * _speed);
         _transform.Rotate(Vector3.up, _rotation.x * _rotationSensitivity);
+        _movement = _transform.TransformDirection(_impulse);
+        _rb.AddForce(_movement * _speed);
     }
 
     public void OnMove(InputValue value)
     {
         Vector2 inputVector = value.Get<Vector2>();
-        _movement = new Vector3(inputVector.x, 0, inputVector.y);
+        _impulse = new Vector3(inputVector.x, 0, inputVector.y);
     }
 
     public void OnLook(InputValue value)
     {
         Vector2 inputVector = value.Get<Vector2>();
-        Debug.Log("Input value look: " + inputVector);
         _rotation = new Vector3(inputVector.x, 0, inputVector.y);        
     }
 
