@@ -8383,7 +8383,7 @@ PrefabInstance:
     - target: {fileID: 4928974888170716173, guid: 63f526963b699ba41892fc4d8d89f60b,
         type: 3}
       propertyPath: _rotationSensitivity
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4928974888170716175, guid: 63f526963b699ba41892fc4d8d89f60b,
         type: 3}
