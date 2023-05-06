@@ -178,6 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _jumpForce: 20
+  _rotationSensitivity: 5
 --- !u!136 &4928974888170716168
 CapsuleCollider:
   m_ObjectHideFlags: 0

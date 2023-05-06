@@ -6,21 +6,24 @@ using UnityEngine;
 public class Mushroom : MonoBehaviour
 {
     public static event Action<int> CollectedMushroom;
+
     [SerializeField] private int _points;
-    private Vector3 _initialPosition;
-    private Transform _transform;
-    private Vector3 _movement;
-    private float _randomChange;
+    [SerializeField] private float _speed = 5f;
+
+    private Vector2 _randomDirection;
+    private Rigidbody _rb;
 
     private void Awake()
     {
-        _transform = GetComponent<Transform>();
-        StartCoroutine(ChangeDirection());
+        if(_speed == 0) _speed = 4;
+        _rb = GetComponent<Rigidbody>();
+        StartCoroutine(ChangeDirectionCoroutine());
     }
 
     private void FixedUpdate()
     {
-        _transform.position = new Vector3(_transform.position.x + _randomChange, _transform.position.y, _transform.position.z + _randomChange);
+        Vector3 newImpulse = new Vector3(_randomDirection.x, 0, _randomDirection.y);
+        _rb.AddForce(newImpulse * _speed);
     }
 
     public int Points
@@ -33,25 +36,27 @@ public class Mushroom : MonoBehaviour
         _points = points;
     }
 
-    public Mushroom(int points, Vector3 initialPosition)
+    private void OnCollisionEnter(Collision other)
     {
-        _initialPosition = initialPosition;
-        _initialPosition = Vector3.zero;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Collected Something!: " + other.gameObject.layer);
         if(other.gameObject.layer == 6)
         {
             CollectedMushroom?.Invoke(_points);
             gameObject.SetActive(false);
+        }else if(other.gameObject.layer == 7)
+        {
+            ChangeDirection();
         }
     }
 
-    private IEnumerator ChangeDirection()
+    private IEnumerator ChangeDirectionCoroutine()
     {
-        _randomChange = UnityEngine.Random.Range(-0.1f, 0.1f);
+        ChangeDirection();
+        _randomDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
         yield return new WaitForSeconds(5);
+    }
+
+    private void ChangeDirection()
+    {
+        _randomDirection = new Vector2(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f));
     }
 }
