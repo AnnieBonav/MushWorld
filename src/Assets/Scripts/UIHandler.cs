@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIHandler : MonoBehaviour
 {
@@ -19,5 +20,9 @@ public class UIHandler : MonoBehaviour
     {
         _score += points;
         _scoreText.text = "Score: " + _score;
+    }
+    public void ChangeToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
