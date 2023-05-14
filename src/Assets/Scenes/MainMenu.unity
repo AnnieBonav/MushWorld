@@ -311,6 +311,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 970742624}
+    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 970742624}
+    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -347,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 2608809853724540042, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}
       propertyPath: m_Name
-      value: MenuButton (1)
+      value: AllWorlds
       objectReference: {fileID: 0}
     - target: {fileID: 2608809853724540043, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}
@@ -1003,6 +1018,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 749721960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &970742622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2608809853724540042, guid: 49c2a7c654ed9a149b40f38a70f165da,
+    type: 3}
+  m_PrefabInstance: {fileID: 2608809853615110058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &970742624 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
+    type: 3}
+  m_PrefabInstance: {fileID: 2608809853615110058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970742622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1069396136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 939731864449184061, guid: ce93e3560f59e564ca9973ff9931679d,
@@ -1046,7 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 970742622}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1362550103
@@ -1205,6 +1238,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 563057861}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621305298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
+    type: 3}
+  m_PrefabInstance: {fileID: 563057861}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1633932106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1713,43 +1758,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      propertyPath: m_Navigation.m_Mode
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 1621305298}
+    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 1621305298}
     - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1362550105}
-    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeControllerPlayground
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneHandling, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608809853724540040, guid: 49c2a7c654ed9a149b40f38a70f165da,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 2608809853724540042, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}
       propertyPath: m_Name
-      value: MenuButton
+      value: WalkingPlayground
       objectReference: {fileID: 0}
     - target: {fileID: 2608809853724540043, guid: 49c2a7c654ed9a149b40f38a70f165da,
         type: 3}

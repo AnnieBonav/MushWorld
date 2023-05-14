@@ -12,6 +12,8 @@ public class MushController : MonoBehaviour
     private Vector3 _movement;
     private Vector3 _rotation;
 
+    private Vector3 _respawnPosition;
+
     public Vector3 Movement
     {
         get { return _movement; }
@@ -26,6 +28,15 @@ public class MushController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
+        _respawnPosition = transform.position;
+        Respawn.NeedRespawn += RespawnPlayer;
+    }
+
+    private void RespawnPlayer()
+    {
+        print("Is reapning");
+        _transform.position = _respawnPosition;
+        _rb.velocity = new Vector3();
     }
 
     private void FixedUpdate()
