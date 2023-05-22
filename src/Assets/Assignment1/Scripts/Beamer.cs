@@ -48,10 +48,9 @@ public class Beamer : MonoBehaviour
                 _lastDirection = Vector3.Reflect(ray.direction, hit.normal);
                 ray = new Ray(_lastEjectionPoint, _lastDirection);
             }
-            // Did not shoot
             else
             {
-                print("Is breaking");
+                //print("Is breaking");
                 break;
                 // _shootingLine.SetPosition(1, _ejectionPoint.forward * _beamRange);
             }

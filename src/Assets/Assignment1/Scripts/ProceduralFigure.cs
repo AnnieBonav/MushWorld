@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public enum FigureType { Tetrahedron, UTetrahedron, Cube, UCube, Heart, LetterA, LetterG, WrongCube, UUCube}
+public enum FigureType { Tetrahedron, UTetrahedron, Cube, UCube, Heart, LetterA, WrongCube, UUCube, Octahedron}
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent (typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshCollider))]
@@ -62,9 +62,18 @@ public class ProceduralFigure : MonoBehaviour
             case FigureType.LetterA:
                 CreateA();
                 break;
+            case FigureType.Octahedron:
+                CreateOctahedron();
+                break;
             default:
                 break;
         }
+    }
+
+    private void CreateOctahedron()
+    {
+        _vertices = new Vector3[] { new Vector3(0, 1, 0), new Vector3(-0.5f, 0, -0.5f), new Vector3(0.5f, 0, -0.5f), new Vector3(-0.5f, 0, 0.5f), new Vector3(0.5f, 0, 0.5f), new Vector3(0, -1, 0)};
+        _triangles = new int[] { 0, 2, 1, 0, 3, 4, 0, 4, 2, 0, 1, 3, 5, 1, 2, 5, 2, 4, 5, 4, 3, 5, 3, 1};
     }
 
     private void CreateA()

@@ -29,6 +29,7 @@ public class Mushroom : MonoBehaviour
         {
             CollectedMushroom?.Invoke(_points);
             gameObject.SetActive(false);
+            AkSoundEngine.PostEvent("Play_Pop", gameObject);
         }
     }
 }

@@ -52,6 +52,8 @@ public class MushController : MonoBehaviour
         _transform.Rotate(Vector3.up, _rotation.x * _rotationSensitivity);
         _movement = _transform.TransformDirection(_impulse);
         _rb.AddForce(_movement * _speed);
+
+        AkSoundEngine.SetRTPCValue("speed", _rb.velocity.magnitude);
     }
 
     public void OnMove(InputValue value)
