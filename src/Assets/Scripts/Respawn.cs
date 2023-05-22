@@ -6,9 +6,22 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     public static event Action NeedRespawn;
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider collider)
     {
-        print("Need respawn");
-        NeedRespawn?.Invoke();
+        if (collider.CompareTag("Player"))
+        {
+            print("Need respawn");
+            NeedRespawn?.Invoke();
+        }
+
+        if (collider.CompareTag("Bullet"))
+        {
+            Bullet tempBullet = collider.gameObject.GetComponent<Bullet>();
+            if (tempBullet != null)
+            {
+                tempBullet.Deactivate();
+            }
+            
+        }
     }
 }
