@@ -64,7 +64,7 @@ public class MushController : MonoBehaviour
 
     public void OnLook(InputValue value)
     {
-        print("Head rotation: " + _headRotationY + "Min head rotation: " + _minHeadRotationY + " Max head rotation: " + _maxHeadRotationY);
+        //print("Head rotation: " + _headRotationY + "Min head rotation: " + _minHeadRotationY + " Max head rotation: " + _maxHeadRotationY);
         Vector2 inputVector = value.Get<Vector2>();
         _rotation = new Vector3(inputVector.x, 0, inputVector.y);
         
