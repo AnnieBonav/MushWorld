@@ -6,7 +6,6 @@ using UnityEngine.UIElements;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefabToSpawn;
     [SerializeField] private BulletPool _bulletPool;
     [SerializeField] private Transform _ejectionPoint;
     [SerializeField] private int _weaponRange = 50;
@@ -55,7 +54,6 @@ public class Weapon : MonoBehaviour
             {
                 _lastEjectionPoint = hit.point; // set new origin, where it hit
                 SetLinePosition();
-                Instantiate(_prefabToSpawn, _lastEjectionPoint, Quaternion.identity);
 
                 // Update new values
                 _lastDirection = Vector3.Reflect(ray.direction, hit.normal);
