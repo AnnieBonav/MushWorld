@@ -61,6 +61,8 @@ sysinfo.txt
 *.unitypackage
 *.app
 
+*.zip
+
 # Crashlytics generated file
 crashlytics-build.properties
 
@@ -74,3 +76,6 @@ crashlytics-build.properties
 
 # Other
 **/OtherAssets/
+**/StreamingAssets/
+**/Wwise/
+**/src_WwiseProject
