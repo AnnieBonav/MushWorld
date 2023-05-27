@@ -3,33 +3,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mushroom : MonoBehaviour
+public enum MushroomType { Live, Dizzy, Speed, Small, Big }
+public class Mushroom : Grabbable
 {
     public static event Action<int> CollectedMushroom;
-
+    [SerializeField] private MushroomType _type;
     [SerializeField] private int _points;
 
-    private void Awake()
+    public override void Grab()
     {
+        DoAction();
+        base.Grab();
     }
 
-    public int Points
+    private void DoAction() // TODO: Make delegate or smt so the function that is called is just asisgned when the mushroom is created and does not need to be checked at runtime
+        // Consider: Should the mushroom be the one handling what effect it has on the game? Or only emit an action and have the element that gets affected by it heart it? 
     {
-        get { return _points; }
-    }
-
-    public Mushroom(int points)
-    {
-        _points = points;
-    }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if(collider.gameObject.layer == 6)
+        switch (_type)
         {
-            CollectedMushroom?.Invoke(_points);
-            gameObject.SetActive(false);
-            AkSoundEngine.PostEvent("Play_Pop", gameObject);
+            case MushroomType.Live:
+                AddLive();
+                break;
+            case MushroomType.Dizzy:
+                MakeDizzy();
+                break;
+            case MushroomType.Small:
+                MakeSmall();
+                break;
+            case MushroomType.Big:
+                MakeBig();
+                break;
         }
+    }
+
+    private void AddLive()
+    {
+        print("Adds Live.");
+        CollectedMushroom?.Invoke(_points);
+    }
+
+    private void MakeDizzy()
+    {
+        print("Makes dizzy");
+    }
+
+    private void MakeSmall()
+    {
+        print("Makes small");
+    }
+
+    private void MakeBig()
+    {
+        print("Makes big");
     }
 }
