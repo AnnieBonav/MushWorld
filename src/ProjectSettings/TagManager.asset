@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Planet
-  - Bullet
+  - Weapon
+  - Grabbable
   layers:
   - Default
   - TransparentFX

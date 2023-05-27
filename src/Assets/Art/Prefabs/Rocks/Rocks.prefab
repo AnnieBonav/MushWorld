@@ -62,27 +62,27 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 66131964068aeaf45a3df221432730f4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66131964068aeaf45a3df221432730f4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66131964068aeaf45a3df221432730f4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66131964068aeaf45a3df221432730f4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66131964068aeaf45a3df221432730f4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 66131964068aeaf45a3df221432730f4,
         type: 3}
@@ -99,6 +99,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 66131964068aeaf45a3df221432730f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66131964068aeaf45a3df221432730f4, type: 3}
 --- !u!4 &179846547441069114 stripped
@@ -107,63 +112,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 429047055532641233}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &311915797335233084 stripped
+--- !u!1 &663473731653236352 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 117214286460000749, guid: 66131964068aeaf45a3df221432730f4,
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 66131964068aeaf45a3df221432730f4,
     type: 3}
   m_PrefabInstance: {fileID: 429047055532641233}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &510571773244255728
+--- !u!64 &4904728779591900502
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311915797335233084}
+  m_GameObject: {fileID: 663473731653236352}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -1579241630799410176, guid: 66131964068aeaf45a3df221432730f4, type: 3}
---- !u!1 &4399470247938199219 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5117700066308340382, guid: 66131964068aeaf45a3df221432730f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 429047055532641233}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &840823144086751206
-MeshCollider:
+  m_Mesh: {fileID: 7702779526387289552, guid: 66131964068aeaf45a3df221432730f4, type: 3}
+--- !u!114 &5057472713788290471
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4399470247938199219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 663473731653236352}
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 289301614986012343, guid: 66131964068aeaf45a3df221432730f4, type: 3}
---- !u!1 &6672471481888636908 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6443852219947562045, guid: 66131964068aeaf45a3df221432730f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 429047055532641233}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1211804482640295258
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6672471481888636908}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4444728127320036556, guid: 66131964068aeaf45a3df221432730f4, type: 3}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277ab23a4aa3ae049bbda581e63f6b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _life: 3

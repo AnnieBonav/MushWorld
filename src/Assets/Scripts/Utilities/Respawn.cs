@@ -14,7 +14,7 @@ public class Respawn : MonoBehaviour
             NeedRespawn?.Invoke();
         }
 
-        if (collider.CompareTag("Bullet"))
+        if (collider.CompareTag("Weapon"))
         {
             Bullet tempBullet = collider.gameObject.GetComponent<Bullet>();
             if (tempBullet != null)

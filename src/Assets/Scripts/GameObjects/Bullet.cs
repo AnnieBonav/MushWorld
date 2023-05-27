@@ -6,8 +6,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float _timeToLive = 5;
     [SerializeField] private bool _killOverTime = false;
     [SerializeField] private float _speed = 130;
+    [SerializeField] private int _damage = 2;
 
     private Transform _parentTransform;
+
+    public int Damage
+    {
+        get { return _damage; }
+    }
 
     public void Activate(Transform parentTransform)
     {
