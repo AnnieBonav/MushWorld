@@ -33,15 +33,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Walk",
-                    "type": "Button",
-                    "id": "91a3f82d-9870-41bd-9e1f-5dcffade0e38",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Shoot",
                     "type": "Button",
                     "id": "283e0487-50a1-454f-8a4d-33f1fc299257",
@@ -81,22 +72,22 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "8c8e490b-c610-4785-884f-f04217b23ca4",
-                    "path": "<Mouse>/forwardButton",
+                    "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
+                    "path": "<Gamepad>/rightStick/y",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Touch",
+                    "groups": "Gamepad",
                     "action": "LookVertical",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
-                    "path": "<Gamepad>/rightStick/y",
+                    "id": "da40db74-e5f5-47dd-91ee-19157456fd10",
+                    "path": "<Mouse>/delta/y",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "LookVertical",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -346,7 +337,7 @@
                 {
                     "name": "",
                     "id": "7bf5834b-1fd1-4bb5-9af3-0016e39f5c57",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -468,6 +459,15 @@
                     "type": "PassThrough",
                     "id": "303bdb70-24c6-43f6-a91a-27efef61ec5a",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ActivateInventory",
+                    "type": "Button",
+                    "id": "fceb9c07-0db5-4603-b731-142dce058475",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -889,6 +889,78 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "abe7721a-3bd1-4bca-a13d-a27b7ee3eb47",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ActivateInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66b27560-fdd5-47d3-affc-e3ef867da50b",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "ActivateInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "865c6b7f-8e95-49d2-acc4-6b3dbebf0774",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ActivateInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Inventory",
+            "id": "33e3409c-6065-42fb-ab90-eb772d1af59d",
+            "actions": [
+                {
+                    "name": "DragAndMove",
+                    "type": "Value",
+                    "id": "d4ad16f7-52a0-4f82-948d-459345fb719f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "26fb7422-0ac3-4893-9af9-f784aa7ded9a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DragAndMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3e60b7d-0c79-4588-947a-5aad1c547305",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DragAndMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

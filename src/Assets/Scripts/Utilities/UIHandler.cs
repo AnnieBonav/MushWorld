@@ -12,6 +12,16 @@ public class UIHandler : MonoBehaviour
     private bool _inventoryOpened = false;
     private int _score = 0;
 
+    public void OnActivateInventory(InputValue value)
+    {
+        print("Actovating inventory");
+    }
+
+    public void ActivateInventory()
+    {
+        print("I am activating");
+    }
+
     public void OnInventory(InputValue value)
     {
         if (_inventoryOpened)

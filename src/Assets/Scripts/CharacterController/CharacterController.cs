@@ -62,6 +62,7 @@ public class CharacterController : MonoBehaviour
         _rb.AddForce(new Vector3(0, _jumpForce, 0));
     }
 
+    
     public void OnGrab(InputValue value)
     {
         Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // center of the screen
