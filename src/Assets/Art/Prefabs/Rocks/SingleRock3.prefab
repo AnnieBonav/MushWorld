@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6183282936029912507
+--- !u!1 &7095212744792156014
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5674926220072726459}
+  - component: {fileID: 4827824036373250622}
   m_Layer: 0
-  m_Name: RockLake
+  m_Name: SingleRock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5674926220072726459
+--- !u!4 &4827824036373250622
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6183282936029912507}
+  m_GameObject: {fileID: 7095212744792156014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.323975, y: -5.56, z: 28.163023}
+  m_LocalPosition: {x: 80.989685, y: -5.7879434, z: 18.658043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2142688305823072507}
+  - {fileID: 6960734303633723428}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1888946494330545936
+--- !u!1001 &7427499585738356687
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 5674926220072726459}
+    m_TransformParent: {fileID: 4827824036373250622}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b354f776094311e47915c8b0c5adf351,
         type: 3}
@@ -94,16 +94,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: b354f776094311e47915c8b0c5adf351,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -7507775577512798303, guid: f3e5c636502cb5d48953ef4a4b4764f7,
+        type: 3}
+    - target: {fileID: -3272106112100924687, guid: b354f776094311e47915c8b0c5adf351,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -3272106112100924687, guid: b354f776094311e47915c8b0c5adf351,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.32
+      objectReference: {fileID: 0}
+    - target: {fileID: -3272106112100924687, guid: b354f776094311e47915c8b0c5adf351,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.71
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b354f776094311e47915c8b0c5adf351,
         type: 3}
       propertyPath: m_Name
-      value: RockLake
+      value: SingleRock3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b354f776094311e47915c8b0c5adf351, type: 3}
---- !u!4 &2142688305823072507 stripped
+--- !u!4 &6960734303633723428 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b354f776094311e47915c8b0c5adf351,
     type: 3}
-  m_PrefabInstance: {fileID: 1888946494330545936}
+  m_PrefabInstance: {fileID: 7427499585738356687}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7769463985875094174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b354f776094311e47915c8b0c5adf351,
+    type: 3}
+  m_PrefabInstance: {fileID: 7427499585738356687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1455859100751284408
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769463985875094174}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7507775577512798303, guid: f3e5c636502cb5d48953ef4a4b4764f7, type: 3}
+--- !u!114 &8022366463688169911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769463985875094174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277ab23a4aa3ae049bbda581e63f6b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _life: 2

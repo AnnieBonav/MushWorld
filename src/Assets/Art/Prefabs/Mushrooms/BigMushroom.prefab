@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6604458915957364265}
   - component: {fileID: 3549823950606306738}
   m_Layer: 0
-  m_Name: SmallerMushroom
+  m_Name: BigMushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 4055447603730499329}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.304, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6675285899058849109}
   m_Father: {fileID: 0}
@@ -76,6 +76,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455ebda5524906944b1b71e5b5cf2147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundEvent: Play_SmallMushroom
+  _grabParticle: {fileID: 1242778720887794744, guid: 00ebb58a5ed1d7a4198638a5f5933293,
+    type: 3}
+  _type: 4
   _points: 1
 --- !u!1001 &6569019391301567166
 PrefabInstance:
@@ -157,7 +161,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c78103db14af69b449ace892ffc81cf7,
         type: 3}
       propertyPath: m_Name
-      value: Mushroom4Mesh
+      value: SmallMushroom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c78103db14af69b449ace892ffc81cf7, type: 3}
