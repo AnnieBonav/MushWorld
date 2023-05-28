@@ -12,6 +12,16 @@ public class InventoryItem : MonoBehaviour
 
     [HideInInspector] public Transform ParentAfterDrag;
 
+    private void Awake()
+    {
+        InitializeItem();
+    }
+
+    public void InitializeItem()
+    {
+        _image.sprite = _item.image;
+    }
+
     public void OnClick()
     {
 
