@@ -4,25 +4,27 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject _inventoryUI;
     [SerializeField] private TMP_Text _scoreText;
+
     private bool _inventoryOpened = false;
     private int _score = 0;
 
     public void OnActivateInventory(InputValue value)
     {
-        print("Actovating inventory");
+        print("Activating inventory");
     }
 
-    public void ActivateInventory()
+    public void OnSwitchSelectedItem(InputValue value)
     {
-        print("I am activating");
+        print("Switch item selection");
     }
 
-    public void OnInventory(InputValue value)
+    public void OnActivateInventoryWindow(InputValue value)
     {
         if (_inventoryOpened)
         {
@@ -50,5 +52,11 @@ public class UIHandler : MonoBehaviour
     public void ChangeToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnNavigate(InputValue value)
+    {
+        GameObject selectedGameObject = EventSystem.current.currentSelectedGameObject;
+        print(selectedGameObject.name);
     }
 }
