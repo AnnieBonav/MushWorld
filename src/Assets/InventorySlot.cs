@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
-
+    private Button _button;
     private void Awake()
     {
         // Listens to UI event that says that something was selected to see if it was selected
+        _button = GetComponent<Button>();
         UIHandler.GrabbedInventorySlot += CheckIfGrabbed;
     }
 
@@ -25,6 +27,12 @@ public class InventorySlot : MonoBehaviour
             }
         }
     }
+
+    public void ActivateSelection()
+    {
+        _button.Select();
+    }
+
     /*public override void OnDrop(PointerEventData eventData)
     {
         _eventData = eventData;

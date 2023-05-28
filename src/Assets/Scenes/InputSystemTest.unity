@@ -173,9 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e656b91acd10740a168686f2f2365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inventoryUI: {fileID: 1323211593}
+  _mainInventoryUI: {fileID: 1323211593}
   _scoreText: {fileID: 1504876369}
-  _playerInput: {fileID: 1871281974}
   _grabAndDrag:
     m_Name: Grab And Drag
     m_Type: 0
@@ -201,6 +200,9 @@ MonoBehaviour:
       m_Action: Grab And Drag
       m_Flags: 0
     m_Flags: 0
+  _inventoryIsActive: 0
+  _inventoryUI: {fileID: 1864865045}
+  _initialSelectedItem: {fileID: 1766669954}
 --- !u!1001 &124278843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2552,6 +2554,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1780710650162149679, guid: 939d18f56fbb04b41b833d1cb26dc83f,
     type: 3}
   m_PrefabInstance: {fileID: 1314677838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1864865045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5032377181466646497, guid: 6922ea5afaaff084cae1165e870e067d,
+    type: 3}
+  m_PrefabInstance: {fileID: 46894343058996090}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1871281973
 GameObject:
@@ -4968,6 +4976,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FirstSelected
       value: 
-      objectReference: {fileID: 1766669954}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8fa40910a0d92f46a80acf48a653d4b, type: 3}
