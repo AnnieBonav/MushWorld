@@ -175,6 +175,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryUI: {fileID: 1323211593}
   _scoreText: {fileID: 1504876369}
+  _playerInput: {fileID: 1871281974}
+  _grabAndDrag:
+    m_Name: Grab And Drag
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: bd836b80-2088-4367-87b5-0920bd0d0818
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: f414ae5c-9c38-4411-bded-43c612b921e9
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grab And Drag
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 064a4c2f-6d49-48b4-b938-960569926be4
+      m_Path: <Mouse>/delta
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Grab And Drag
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1001 &124278843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1189,12 +1215,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9004722243995559101, guid: a635a332f15986f49b2e020a1bfb8b15,
     type: 3}
   m_PrefabInstance: {fileID: 351704076}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &753752205 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 46894344648886789, guid: 6922ea5afaaff084cae1165e870e067d,
-    type: 3}
-  m_PrefabInstance: {fileID: 46894343058996090}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &772211178
 PrefabInstance:
@@ -2305,125 +2325,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2116666107}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1724133769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753752205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 56bdf37594b103646adf092addca7304,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4a7ccedc-e646-4bac-85fd-e83f8e6717e8
-    m_ActionName: Player/LookVertical[/XInputControllerWindows/rightStick/y,/Mouse/delta/y]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 97977580-7c2f-4a29-898d-73d97f9d8566
-    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9425f697-1bb9-46f3-91da-d6af6017f8b3
-    m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 283e0487-50a1-454f-8a4d-33f1fc299257
-    m_ActionName: Player/Shoot[/XInputControllerWindows/rightTrigger,/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 200e6e58-1677-40c0-910c-b22323a6c8b1
-    m_ActionName: Player/LookHorizontal[/XInputControllerWindows/rightStick/x,/Mouse/delta/x]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 77684a9b-e882-459f-a2ca-ec74574a95b8
-    m_ActionName: Player/Grab[/XInputControllerWindows/buttonEast,/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ActivateInventory
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 0d309a69-d6fc-4407-bb67-d9e9ac9c4a9c
-    m_ActionName: Player/Inventory[/XInputControllerWindows/select,/Keyboard/i]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9eb48102-1e42-4c92-8f84-dda35a1f114b
-    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 9b745269-027b-4f84-90be-165dbac0e4aa
-    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bbcc02c3-fe07-45d2-a855-3b96c1e4798a
-    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 59760e29-3ab6-488b-9e1f-5d46ef77708d
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 95bbc989-0deb-4c32-be2f-b9b29c9f97d6
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 759a5bd7-75f6-430b-928a-a821b0ad25a0
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dbffe1dd-9bf0-4356-a08e-e9f86fc1d031
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 37823315-3f5f-4e26-95df-1d8251e2606b
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 69388b58-4135-41d5-b27c-ce7dacd881db
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 303bdb70-24c6-43f6-a91a-27efef61ec5a
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d4ad16f7-52a0-4f82-948d-459345fb719f
-    m_ActionName: Inventory/DragAndMove[/Mouse/leftButton,/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ff40e438-e25c-4bc9-91e9-e67eb911d9a3
-    m_ActionName: Player/SwitchSelectedItem[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/rightShoulder,/Keyboard/1]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1766669954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8500096653303685190, guid: 6922ea5afaaff084cae1165e870e067d,
@@ -3302,6 +3203,11 @@ PrefabInstance:
     - target: {fileID: 46894344648887038, guid: 6922ea5afaaff084cae1165e870e067d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113336814882403147, guid: 6922ea5afaaff084cae1165e870e067d,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 698879739934285966, guid: 6922ea5afaaff084cae1165e870e067d,

@@ -5,9 +5,12 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using System;
 
 public class UIHandler : MonoBehaviour
 {
+    public static event Action<GameObject> GrabbedInventorySlot;
+
     [SerializeField] private GameObject _inventoryUI;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private PlayerInput _playerInput;
@@ -24,6 +27,16 @@ public class UIHandler : MonoBehaviour
     public void OnSwitchSelectedItem(InputValue value)
     {
         print("Switch item selection");
+    }
+
+    public void OnGrab(InputValue value)
+    {
+        // Check if the selected game object has the Inventory Slot class, if yes, then emit an event so slot classes check if they were selected
+        InventorySlot temp = EventSystem.current.currentSelectedGameObject.GetComponent<InventorySlot>();
+        if ( temp != null)
+        {
+            GrabbedInventorySlot?.Invoke(temp.gameObject);
+        }
     }
 
     public void OnActivateInventoryWindow(InputValue value)

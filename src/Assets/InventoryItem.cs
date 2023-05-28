@@ -16,15 +16,16 @@ public class InventoryItem : MonoBehaviour
     {
         InitializeItem();
     }
-
-    public void InitializeItem()
+    private void InitializeItem()
     {
         _image.sprite = _item.image;
     }
 
-    public void OnClick()
+    public void InstantiateMushroom()
     {
-
+        print("I am a child instantiating a mushroom");
+        GameObject temp = _item.itemPrefab;
+        Instantiate(temp, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     /*public void OnBeginDrag(PointerEventData eventData)
