@@ -7,6 +7,7 @@ public class Grabbable : MonoBehaviour
 {
     public static event Action<Grabbable> CollectedGrabbable;
     [SerializeField] private string _soundEvent;
+    [SerializeField] private GameObject _grabParticle;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class Grabbable : MonoBehaviour
     {
         CollectedGrabbable?.Invoke(this);
         AkSoundEngine.PostEvent(_soundEvent, gameObject);
-        Destroy(this.gameObject);
+        Instantiate(_grabParticle, gameObject.transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        Destroy(gameObject);
     }
 }
