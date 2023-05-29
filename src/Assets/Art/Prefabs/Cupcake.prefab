@@ -101,6 +101,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 143773230132876860, guid: 7b6ee77fde76f40e1bc373c79a408e89,
         type: 3}
+      propertyPath: UISprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 394e93ce356b57344903a08ff72fcab2,
+        type: 3}
+    - target: {fileID: 143773230132876860, guid: 7b6ee77fde76f40e1bc373c79a408e89,
+        type: 3}
       propertyPath: _grabParticle
       value: 
       objectReference: {fileID: 1242778720887794744, guid: 6b58280627f846946bc9470a8de20ef8,

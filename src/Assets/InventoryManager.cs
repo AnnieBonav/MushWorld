@@ -25,6 +25,9 @@ public class InventoryManager : MonoBehaviour
         {
             _inventorySlots.Add(_smallInventoryUI.transform.GetChild(i).GetComponent<InventorySlot>());
         }
+
+        Grabbable.CollectedGrabbable += AddItem;
+
     }
 
     // To add an InventoryItem, I collected a grabbable
