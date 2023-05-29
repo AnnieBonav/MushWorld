@@ -8,16 +8,13 @@ public class InventoryItem : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private Image _image;
-    [SerializeField] private Item _item;
+    private Item _item;
 
     [HideInInspector] public Transform ParentAfterDrag;
 
-    private void Awake()
+    public void InitializeItem(Item item)
     {
-        InitializeItem();
-    }
-    private void InitializeItem()
-    {
+        _item = item;
         _image.sprite = _item.image;
     }
 

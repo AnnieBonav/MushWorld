@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 using System;
 using UnityEngine.UI;
 
+// TODO: Add map changing scheme
+// TODO: Fill inventory items with already existing items
 public class UIHandler : MonoBehaviour
 {
     public static event Action<GameObject> GrabbedInventorySlot;
@@ -27,6 +29,67 @@ public class UIHandler : MonoBehaviour
     private InputActionMap _UIMap;
     private InputActionMap _playerMap;
 
+    private InventoryItemsList _inventoryItems;
+
+    [SerializeField] private Item _testBigMush;
+    [SerializeField] private Item _testSmallMush;
+    [SerializeField] private GameObject _inventoryItemPrefab;
+
+    public InventorySlot[] _inventorySlots;
+
+    private void Awake()
+    {
+        _inventoryItems = new InventoryItemsList();
+        _scoreText.text = "Score: " + _score;
+        Mushroom.CollectedMushroom += IncreasePoints;
+        _mainInventoryUI.SetActive(false);
+
+        _grabAndDrag.started += StartsGrabbing;
+        _grabAndDrag.performed += StartsGrabbing;
+        _grabAndDrag.canceled += StartsGrabbing;
+
+
+        _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
+    }
+
+    public void TestAddSmall()
+    {
+        print("Add small");
+        AddItem(_testSmallMush);
+    }
+
+    public void AddItem(Item item)
+    {
+
+        /* GameObject newInventoryItem = Instantiate(_inventoryItemPrefab, EventSystem.current.currentSelectedGameObject.transform);
+        InventoryItem inventoryItem = newInventoryItem.GetComponent<InventoryItem>();
+        inventoryItem.InitializeItem(item); // The item will be sent by the mushroom that was grabbed
+        _inventoryItems.AddItem(inventoryItem);*/
+
+        for(int i = 0; i < _inventorySlots.Length; i++)
+        {
+            InventorySlot slot = _inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if(itemInSlot == null)
+            {
+                SpawnNewItem(item, slot);
+                return;
+            }
+        }
+    }
+
+    private void SpawnNewItem(Item item, InventorySlot slot)
+    {
+        GameObject newItem = Instantiate(_inventoryItemPrefab, slot.transform);
+        InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
+        inventoryItem.InitializeItem(item);
+    }
+
+    public void TestAddBig()
+    {
+        print("Add big");
+        AddItem(_testBigMush);
+    }
 
     public void OnActivateInventory(InputValue value)
     {
@@ -58,19 +121,7 @@ public class UIHandler : MonoBehaviour
         _mainInventoryUI.SetActive(_inventoryOpened);
     }
 
-    private void Awake()
-    {
-        _scoreText.text = "Score: " + _score;
-        Mushroom.CollectedMushroom += IncreasePoints;
-        _mainInventoryUI.SetActive(false);
-
-        _grabAndDrag.started += StartsGrabbing;
-        _grabAndDrag.performed += StartsGrabbing;
-        _grabAndDrag.canceled += StartsGrabbing;
-
-
-        _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
-    }
+    
 
     private void FinishedSwitchedSelectedItem(InputAction.CallbackContext context)
     {
@@ -137,26 +188,12 @@ public class UIHandler : MonoBehaviour
         
     }
 
-    private void SwitchActionMap()
-    {
-        print("SWITCH");
-        if (_playerInput.currentActionMap.name == "Player")
-        {
-            print("Was player");
-            _playerInput.SwitchCurrentActionMap("UI");
-        }
-        else
-        {
-            print("Was UI");
-            _playerInput.SwitchCurrentActionMap("Player");
-        }
-    }
+    
     public void OnSwitchSelectedItem(InputValue value)
     {
-        // print(value.isPressed);
-        // SwitchActionMap();
+        print(value.isPressed);
+        SwitchActionMap();
 
-        /*
         if (!_inventoryIsActive)
         {
             _inventoryIsActive = true;
@@ -168,7 +205,7 @@ public class UIHandler : MonoBehaviour
             _lastSelectedItem = _initialSelectedItem;
             _lastSelectedItem.GetComponent<InventorySlot>().ActivateSelection();
         }
-        print("Switched selected item");*/
+        print("Switched selected item");
     }
 
     // Navigates between the items on the inventory
@@ -226,6 +263,22 @@ public class UIHandler : MonoBehaviour
             {
                 Debug.Log("Button released");
             }
+        }
+    }
+
+    // TODO: Change action maps
+    private void SwitchActionMap()
+    {
+        print("SWITCH");
+        if (_playerInput.currentActionMap.name == "Player")
+        {
+            print("Was player");
+            _playerInput.SwitchCurrentActionMap("UI");
+        }
+        else
+        {
+            print("Was UI");
+            _playerInput.SwitchCurrentActionMap("Player");
         }
     }
 }

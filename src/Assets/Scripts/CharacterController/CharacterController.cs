@@ -23,20 +23,19 @@ public class CharacterController : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _transform = GetComponent<Transform>();
         _respawnPosition = transform.position;
-        Respawn.NeedRespawn += RespawnPlayer;
-    }
-
-    private void RespawnPlayer()
-    {
-        print("Is respawning");
-        _transform.position = _respawnPosition;
-        _rb.velocity = new Vector3();
+        Respawn.NeedRespawn += HandleRespawn;
     }
 
     private void FixedUpdate()
     {
         _transform.Rotate(Vector3.up, _rotation.x * _lookSensitivity);
         HandleMove();
+    }
+
+    private void HandleRespawn()
+    {
+        _transform.position = _respawnPosition;
+        _rb.velocity = new Vector3();
     }
 
     private void HandleMove()
@@ -65,13 +64,12 @@ public class CharacterController : MonoBehaviour
     
     public void OnGrab(InputValue value)
     {
-        Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f); // center of the screen
+        Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f);
         float rayLength = 50f;
 
         // actual Ray
         Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
 
-        // debug Ray
         Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
 
         RaycastHit hit;
@@ -83,7 +81,6 @@ public class CharacterController : MonoBehaviour
                 tempGrabbable.Grab();
             }
             if(_grabDebug) print("Hit something?: " + hit.collider.transform.name);
-            // our Ray intersected a collider
         }
     }
 }

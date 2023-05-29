@@ -8,6 +8,7 @@ public class Grabbable : MonoBehaviour
     public static event Action<Grabbable> CollectedGrabbable;
     [SerializeField] private string _soundEvent;
     [SerializeField] private GameObject _grabParticle;
+    [SerializeField] private Item _uiItem;
 
     private void Awake()
     {
