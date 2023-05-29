@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    private InventoryItemsList _inventoryItems;
+    private CollectedGrabbables _collectedGrabbables;
     [SerializeField] private GameObject _smallInventoryUI;
 
     [SerializeField] private Grabbable _testBigMush;
@@ -17,50 +18,67 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         _inventorySlots = new List<InventorySlot>();
-        _inventoryItems = new InventoryItemsList();
-
+        _collectedGrabbables = new CollectedGrabbables();
+        
+        // Fill the slots with children of inventory
         for(int i = 0; i < _smallInventoryUI.transform.childCount; i++)
         {
             _inventorySlots.Add(_smallInventoryUI.transform.GetChild(i).GetComponent<InventorySlot>());
         }
     }
 
-    public void TestAddSmall()
-    {
-        print("Add small");
-        AddItem(_testSmallMush);
-    }
-
+    // To add an InventoryItem, I collected a grabbable
     public void AddItem(Grabbable grabbable)
     {
+        // If amount is -1, it did not exist. If it is anything else, it existed and now we only need to add
+        int currentAmount = _collectedGrabbables.Add(grabbable);
 
-        /* GameObject newInventoryItem = Instantiate(_inventoryItemPrefab, EventSystem.current.currentSelectedGameObject.transform);
-        InventoryItem inventoryItem = newInventoryItem.GetComponent<InventoryItem>();
-        inventoryItem.InitializeItem(item); // The item will be sent by the mushroom that was grabbed
-        _inventoryItems.AddItem(inventoryItem);*/
+        if(currentAmount <= 0)
+        {
+            print("Spawning new item");
+            for (int i = 0; i < _inventorySlots.Count; i++)
+            {
+                InventorySlot slot = _inventorySlots[i];
+                InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+                if (itemInSlot == null)
+                {
+                    SpawnNewItem(grabbable, slot);
+                    return;
+                }
+            }
+        }
 
-        for (int i = 0; i < _inventorySlots.Count; i++)
+        print("Updating amount");
+        for(int i = 0; i < _inventorySlots.Count; i++)
         {
             InventorySlot slot = _inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if (itemInSlot == null)
+            if(grabbable == itemInSlot.grabbable)
             {
-                SpawnNewItem(grabbable, slot);
-                return;
+                itemInSlot.UpdateAmount(currentAmount);
             }
         }
+        // If item did exist, then add to the number
+
+        
     }
 
-    private void SpawnNewItem(Grabbable grabbable, InventorySlot slot)
+    private void SpawnNewItem(Grabbable collectedGrabbable, InventorySlot slot)
     {
         GameObject newItem = Instantiate(_inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
-        inventoryItem.Initialize(grabbable);
+        inventoryItem.Initialize(collectedGrabbable);
+
+        
     }
 
     public void TestAddBig()
     {
-        print("Add big");
         AddItem(_testBigMush);
+    }
+
+    public void TestAddSmall()
+    {
+        AddItem(_testSmallMush);
     }
 }
