@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e656b91acd10740a168686f2f2365d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerInput: {fileID: 1871281974}
   _mainInventoryUI: {fileID: 1323211593}
   _scoreText: {fileID: 1504876369}
   _grabAndDrag:
@@ -1409,18 +1410,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2717820430470986975}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1005558094 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7231052455264069499, guid: b8fa40910a0d92f46a80acf48a653d4b,
-    type: 3}
-  m_PrefabInstance: {fileID: 7231052453895329757}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1014928060
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2593,7 +2582,7 @@ MonoBehaviour:
   m_Actions: {fileID: -944628639613478452, guid: 56bdf37594b103646adf092addca7304,
     type: 3}
   m_NotificationBehavior: 1
-  m_UIInputModule: {fileID: 1005558094}
+  m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
       m_Calls: []
