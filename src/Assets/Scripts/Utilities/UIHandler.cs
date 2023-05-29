@@ -13,38 +13,49 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour
 {
     public static event Action<GameObject> GrabbedInventorySlot;
+
+    [Header("UI Elements")]
+    [SerializeField] private TMP_Text _livesText;
+    private int _livesAmount = 0;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _backgroundUI;
+
+    [Header("Player Input")]
     [SerializeField] private PlayerInput _playerInput;
-    [SerializeField] private TMP_Text _scoreText;
-    [SerializeField] private InputAction _grabAndDrag;
-
-    [SerializeField] private GameObject _initialSelectedItem;
-    private GameObject _lastSelectedItem;
-
-    private bool _inventoryOpened = false;
-    private int _score = 0;
+    // [SerializeField] private InputAction _grabAndDrag;
 
     private InputActionMap _UIMap;
     private InputActionMap _playerMap;
 
+    private bool _isPaused = false;
 
     private void Awake()
     {
-        _scoreText.text = "Score: " + _score;
-        Mushroom.CollectedMushroom += IncreasePoints;
+        _pauseMenu.SetActive(false);
+        _backgroundUI.SetActive(false);
+        _livesText.text = _livesAmount.ToString();
+        // Mushroom.CollectedMushroom += UpdateLives; // TODO: Change to hear from hearts collected
         
-        _grabAndDrag.started += StartsGrabbing;
+        /* _grabAndDrag.started += StartsGrabbing;
         _grabAndDrag.performed += StartsGrabbing;
-        _grabAndDrag.canceled += StartsGrabbing;
-
+        _grabAndDrag.canceled += StartsGrabbing;*/
 
         // _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
     }
 
-    public void OnActivateInventory(InputValue value)
+    public void OnPause(InputValue value)
     {
-        _UIMap = _playerInput.actions.FindActionMap("UI");
-        _playerMap = _playerInput.actions.FindActionMap("Player");
-        print("Activating inventory");
+        if (_isPaused)
+        {
+            _isPaused = false;
+        }
+        else
+        {
+            _isPaused = true;
+        }
+
+        _pauseMenu.SetActive(_isPaused);
+        _backgroundUI.SetActive(_isPaused);
     }
 
     public void OnGrab(InputValue value)
@@ -99,10 +110,10 @@ public class UIHandler : MonoBehaviour
         }
     }
 
-    private void IncreasePoints(int points)
+    private void UpdateLives(int lives)
     {
-        _score += points;
-        _scoreText.text = "Score: " + _score;
+        _livesAmount += lives;
+        _livesText.text = _livesAmount.ToString();
     }
     public void ChangeToMainMenu()
     {

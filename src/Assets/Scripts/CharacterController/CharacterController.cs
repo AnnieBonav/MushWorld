@@ -83,4 +83,27 @@ public class CharacterController : MonoBehaviour
             if(_grabDebug) print("Hit something?: " + hit.collider.transform.name);
         }
     }
+
+    public void OnPlace(InputValue value)
+    {
+        print("Placing item");
+        /* Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f);
+        float rayLength = 50f;
+
+        // actual Ray
+        Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
+
+        Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
+
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, rayLength))
+        {
+            Grabbable tempGrabbable = hit.collider.gameObject.GetComponent<Grabbable>();
+            if (tempGrabbable != null)
+            {
+                tempGrabbable.Grab();
+            }
+            if (_grabDebug) print("Hit something?: " + hit.collider.transform.name);
+        }*/
+    }
 }

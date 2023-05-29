@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class InventoryUIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject _bigInventoryUI;
+    [SerializeField] private GameObject _backgroundUI;
     [SerializeField] private GameObject _smallInventoryUI;
 
     private bool _bigInventoryOpened = false;
@@ -18,7 +19,7 @@ public class InventoryUIHandler : MonoBehaviour
     private void Awake()
     {
         _bigInventoryUI.SetActive(false);
-
+        _backgroundUI.SetActive(false);
         // Fill the slots with children of inventory
         for (int i = 0; i < _smallInventoryUI.transform.childCount; i++)
         {
@@ -32,6 +33,9 @@ public class InventoryUIHandler : MonoBehaviour
     }
 
     // Switches between selected slots in loop
+    // TODO: when something else is selected (oustide) this is deselected. Maybe that can be prettier? It does not break tho.
+    // TODO: would be nice to modify how the inventory looks like when stuff is being moved around
+    // TODO: Add moving inventory items around slots
     public void OnSwitchSelectedItem(InputValue value)
     {
         int inputValue = (int)value.Get<float>();
@@ -61,18 +65,6 @@ public class InventoryUIHandler : MonoBehaviour
             _bigInventoryOpened = true;
         }
         _bigInventoryUI.SetActive(_bigInventoryOpened);
-    }
-
-    private void ModifyInventory()
-    {
-        if (_smallInventoryActive)
-        {
-            // _inventoryUI.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-        }
-        else
-        {
-            // _inventoryUI.transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-
+        _backgroundUI.SetActive(_bigInventoryOpened);
     }
 }
