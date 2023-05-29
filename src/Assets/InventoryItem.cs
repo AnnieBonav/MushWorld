@@ -6,23 +6,21 @@ using UnityEngine.InputSystem;
 
 public class InventoryItem : MonoBehaviour
 {
-    [Header("UI")]
     [SerializeField] private Image _image;
-    private Item _item;
+    private Grabbable _grabbable;
 
     [HideInInspector] public Transform ParentAfterDrag;
 
-    public void InitializeItem(Item item)
+    public void Initialize(Grabbable grabbable)
     {
-        _item = item;
-        _image.sprite = _item.image;
+        _grabbable = grabbable;
+        _image.sprite = _grabbable.UISprite;
     }
 
     public void InstantiateMushroom()
     {
         print("I am a child instantiating a mushroom");
-        GameObject temp = _item.itemPrefab;
-        Instantiate(temp, new Vector3(0, 0, 0), Quaternion.identity);
+        Instantiate(_grabbable, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     /*public void OnBeginDrag(PointerEventData eventData)

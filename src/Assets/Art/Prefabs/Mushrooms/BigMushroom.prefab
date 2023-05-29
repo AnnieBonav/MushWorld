@@ -79,7 +79,7 @@ MonoBehaviour:
   _soundEvent: Play_SmallMushroom
   _grabParticle: {fileID: 1242778720887794744, guid: 00ebb58a5ed1d7a4198638a5f5933293,
     type: 3}
-  _uiItem: {fileID: 11400000, guid: 43c000af199ff8c4d8b9d753c4b6a0f6, type: 2}
+  UISprite: {fileID: 21300000, guid: 246e29e446d963943a3cd24d10b271eb, type: 3}
   _type: 4
   _points: 1
 --- !u!1001 &6569019391301567166

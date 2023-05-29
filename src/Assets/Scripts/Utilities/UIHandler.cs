@@ -18,7 +18,6 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private InputAction _grabAndDrag;
     [SerializeField] private bool _inventoryIsActive = false;
-    [SerializeField] private GameObject _inventoryUI;
 
     [SerializeField] private GameObject _initialSelectedItem;
     private GameObject _lastSelectedItem;
@@ -29,17 +28,9 @@ public class UIHandler : MonoBehaviour
     private InputActionMap _UIMap;
     private InputActionMap _playerMap;
 
-    private InventoryItemsList _inventoryItems;
-
-    [SerializeField] private Item _testBigMush;
-    [SerializeField] private Item _testSmallMush;
-    [SerializeField] private GameObject _inventoryItemPrefab;
-
-    public InventorySlot[] _inventorySlots;
 
     private void Awake()
     {
-        _inventoryItems = new InventoryItemsList();
         _scoreText.text = "Score: " + _score;
         Mushroom.CollectedMushroom += IncreasePoints;
         _mainInventoryUI.SetActive(false);
@@ -50,45 +41,6 @@ public class UIHandler : MonoBehaviour
 
 
         _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
-    }
-
-    public void TestAddSmall()
-    {
-        print("Add small");
-        AddItem(_testSmallMush);
-    }
-
-    public void AddItem(Item item)
-    {
-
-        /* GameObject newInventoryItem = Instantiate(_inventoryItemPrefab, EventSystem.current.currentSelectedGameObject.transform);
-        InventoryItem inventoryItem = newInventoryItem.GetComponent<InventoryItem>();
-        inventoryItem.InitializeItem(item); // The item will be sent by the mushroom that was grabbed
-        _inventoryItems.AddItem(inventoryItem);*/
-
-        for(int i = 0; i < _inventorySlots.Length; i++)
-        {
-            InventorySlot slot = _inventorySlots[i];
-            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if(itemInSlot == null)
-            {
-                SpawnNewItem(item, slot);
-                return;
-            }
-        }
-    }
-
-    private void SpawnNewItem(Item item, InventorySlot slot)
-    {
-        GameObject newItem = Instantiate(_inventoryItemPrefab, slot.transform);
-        InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
-        inventoryItem.InitializeItem(item);
-    }
-
-    public void TestAddBig()
-    {
-        print("Add big");
-        AddItem(_testBigMush);
     }
 
     public void OnActivateInventory(InputValue value)
@@ -179,11 +131,11 @@ public class UIHandler : MonoBehaviour
     {
         if (_inventoryIsActive)
         {
-            _inventoryUI.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+            // _inventoryUI.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
         }
         else
         {
-            _inventoryUI.transform.localScale = new Vector3(1f, 1f, 1f);
+            // _inventoryUI.transform.localScale = new Vector3(1f, 1f, 1f);
         }
         
     }

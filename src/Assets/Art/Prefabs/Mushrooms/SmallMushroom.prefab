@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundEvent: 
   _grabParticle: {fileID: 0}
-  _uiItem: {fileID: 11400000, guid: 09350d3f06158e142a66a0ba144d24c2, type: 2}
+  UISprite: {fileID: 21300000, guid: 6bb61c771fe710d4da7b8e59ee069113, type: 3}
   _type: 3
   _points: 1
 --- !u!1001 &6569019391301567166

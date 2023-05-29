@@ -8,7 +8,7 @@ public class Grabbable : MonoBehaviour
     public static event Action<Grabbable> CollectedGrabbable;
     [SerializeField] private string _soundEvent;
     [SerializeField] private GameObject _grabParticle;
-    [SerializeField] private Item _uiItem;
+    public Sprite UISprite; // TODO: Check if public is needed, used so the iNventoryItem can be initialized with the sprite
 
     private void Awake()
     {
