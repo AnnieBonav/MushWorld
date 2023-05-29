@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour
 {
@@ -30,7 +31,12 @@ public class InventorySlot : MonoBehaviour
 
     public void ActivateSelection()
     {
-        _button.Select();
+        EventSystem.current.SetSelectedGameObject(gameObject);
+    }
+
+    public void DeactivateSelection()
+    {
+        // _button.OnDeselect();
     }
 
     /*public override void OnDrop(PointerEventData eventData)

@@ -14,10 +14,8 @@ public class UIHandler : MonoBehaviour
 {
     public static event Action<GameObject> GrabbedInventorySlot;
     [SerializeField] private PlayerInput _playerInput;
-    [SerializeField] private GameObject _mainInventoryUI;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private InputAction _grabAndDrag;
-    [SerializeField] private bool _inventoryIsActive = false;
 
     [SerializeField] private GameObject _initialSelectedItem;
     private GameObject _lastSelectedItem;
@@ -33,14 +31,13 @@ public class UIHandler : MonoBehaviour
     {
         _scoreText.text = "Score: " + _score;
         Mushroom.CollectedMushroom += IncreasePoints;
-        _mainInventoryUI.SetActive(false);
-
+        
         _grabAndDrag.started += StartsGrabbing;
         _grabAndDrag.performed += StartsGrabbing;
         _grabAndDrag.canceled += StartsGrabbing;
 
 
-        _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
+        // _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
     }
 
     public void OnActivateInventory(InputValue value)
@@ -59,21 +56,6 @@ public class UIHandler : MonoBehaviour
             GrabbedInventorySlot?.Invoke(temp.gameObject);
         }
     }
-
-    public void OnActivateInventoryWindow(InputValue value)
-    {
-        if (_inventoryOpened)
-        {
-            _inventoryOpened = false;
-        }
-        else
-        {
-            _inventoryOpened = true;
-        }
-        _mainInventoryUI.SetActive(_inventoryOpened);
-    }
-
-    
 
     private void FinishedSwitchedSelectedItem(InputAction.CallbackContext context)
     {
@@ -127,38 +109,10 @@ public class UIHandler : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    private void ModifyInventory()
-    {
-        if (_inventoryIsActive)
-        {
-            // _inventoryUI.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-        }
-        else
-        {
-            // _inventoryUI.transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        
-    }
+    
 
     
-    public void OnSwitchSelectedItem(InputValue value)
-    {
-        print(value.isPressed);
-        SwitchActionMap();
-
-        if (!_inventoryIsActive)
-        {
-            _inventoryIsActive = true;
-            ModifyInventory();
-
-        }
-        if(_lastSelectedItem == null)
-        {
-            _lastSelectedItem = _initialSelectedItem;
-            _lastSelectedItem.GetComponent<InventorySlot>().ActivateSelection();
-        }
-        print("Switched selected item");
-    }
+    
 
     // Navigates between the items on the inventory
     public void OnNavigate(InputValue value)
@@ -170,8 +124,8 @@ public class UIHandler : MonoBehaviour
             SwitchActionMap();
         }*/
         
-        _inventoryIsActive = false; // TODO: This disabling going through the inventory could be prettier than checking every time the player moves
-        ModifyInventory();
+        // _inventoryIsActive = false; // TODO: This disabling going through the inventory could be prettier than checking every time the player moves
+        // ModifyInventory();
         GameObject selectedGameObject = EventSystem.current.currentSelectedGameObject;
         // If the selected item was an InventorySlot, I save it. If not, I can always go back to the selected one
         /* if (selectedGameObject.CompareTag("InventorySlot"))
