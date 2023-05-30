@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3549823950606306738}
   m_Layer: 0
   m_Name: BigMushroom
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmallMushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c78103db14af69b449ace892ffc81cf7,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grabbable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c78103db14af69b449ace892ffc81cf7, type: 3}

@@ -12,7 +12,6 @@ using UnityEngine.UI;
 // TODO: Fill inventory items with already existing items
 public class UIHandler : MonoBehaviour
 {
-    public static event Action<GameObject> GrabbedInventorySlot;
 
     [Header("UI Elements")]
     [SerializeField] private TMP_Text _livesText;
@@ -56,16 +55,6 @@ public class UIHandler : MonoBehaviour
 
         _pauseMenu.SetActive(_isPaused);
         _backgroundUI.SetActive(_isPaused);
-    }
-
-    public void OnGrab(InputValue value)
-    {
-        // Check if the selected game object has the Inventory Slot class, if yes, then emit an event so slot classes check if they were selected
-        InventorySlot temp = EventSystem.current.currentSelectedGameObject.GetComponent<InventorySlot>();
-        if ( temp != null)
-        {
-            GrabbedInventorySlot?.Invoke(temp.gameObject);
-        }
     }
 
     private void FinishedSwitchedSelectedItem(InputAction.CallbackContext context)

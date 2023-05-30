@@ -1,9 +1,13 @@
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using System;
 
 public class CharacterController : MonoBehaviour
 {
+    public static event Action<GameObject> GrabbedInventorySlot;
+
     [SerializeField] private float _lookSensitivity = 8f;
     [SerializeField] private float _moveSensitivity = 1;
     [SerializeField] private float _moveSpeed = 40;
@@ -17,6 +21,10 @@ public class CharacterController : MonoBehaviour
     private Vector3 _rotation;
 
     private Vector3 _respawnPosition;
+
+    private Vector3 _cameraOrigin = new Vector3(0.5f, 0.5f, 0f);
+    [SerializeField] private float _rayLength = 50f;
+
 
     private void Awake()
     {
@@ -64,17 +72,11 @@ public class CharacterController : MonoBehaviour
     
     public void OnGrab(InputValue value)
     {
-        Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f);
-        float rayLength = 50f;
-
-        // actual Ray
-        Ray ray = Camera.main.ViewportPointToRay(rayOrigin);
-
-        Debug.DrawRay(ray.origin, ray.direction * rayLength, Color.red);
-
+        Ray ray = Camera.main.ViewportPointToRay(_cameraOrigin);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, rayLength))
+        if (Physics.Raycast(ray, out hit, _rayLength))
         {
+            if (!hit.collider.gameObject.CompareTag("Grabbable")) return; // Returns if it is not grabbale
             Grabbable tempGrabbable = hit.collider.gameObject.GetComponent<Grabbable>();
             if(tempGrabbable != null)
             {
@@ -87,6 +89,14 @@ public class CharacterController : MonoBehaviour
     public void OnPlace(InputValue value)
     {
         print("Placing item");
+        // Check if the selected game object has the Inventory Slot class, if yes, then emit an event so slot classes check if they were selected
+        InventorySlot temp = EventSystem.current.currentSelectedGameObject.GetComponent<InventorySlot>();
+        if (temp != null)
+        {
+            // This is invoking something that the inventory slot hears but I am not really senidng an inventory slot? IDK line 15 inventiry slot
+            GrabbedInventorySlot?.Invoke(temp.gameObject);
+        }
+
         /* Vector3 rayOrigin = new Vector3(0.5f, 0.5f, 0f);
         float rayLength = 50f;
 

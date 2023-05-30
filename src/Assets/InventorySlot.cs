@@ -12,7 +12,7 @@ public class InventorySlot : MonoBehaviour
     {
         // Listens to UI event that says that something was selected to see if it was selected
         _button = GetComponent<Button>();
-        UIHandler.GrabbedInventorySlot += CheckIfGrabbed;
+        CharacterController.GrabbedInventorySlot += CheckIfGrabbed;
     }
 
     private void CheckIfGrabbed(GameObject itemGrabbed)

@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Planet
   - Weapon
   - Grabbable
   - InventorySlot
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - UI
   - Player
   - Walls
-  - 
+  - NonRender
   - 
   - 
   - 
