@@ -214,6 +214,7 @@ MonoBehaviour:
   _bigInventoryUI: {fileID: 416097556}
   _backgroundUI: {fileID: 1903564943}
   _smallInventoryUI: {fileID: 1864865045}
+  SelectedGrabbable: {fileID: 0}
   _inventorySlots: []
 --- !u!1001 &124278843
 PrefabInstance:
@@ -5450,6 +5451,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1871281975}
     m_Modifications:
+    - target: {fileID: 2856298302343373141, guid: 5dcb8a499b2793441b53553f8dd6d599,
+        type: 3}
+      propertyPath: _anglePerSecond
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4928974888170716172, guid: 5dcb8a499b2793441b53553f8dd6d599,
         type: 3}
       propertyPath: m_RootOrder
@@ -5520,6 +5526,11 @@ PrefabInstance:
       propertyPath: _origin
       value: 
       objectReference: {fileID: 1887432560}
+    - target: {fileID: 7902895339699041256, guid: 5dcb8a499b2793441b53553f8dd6d599,
+        type: 3}
+      propertyPath: _inventoryUIHandler
+      value: 
+      objectReference: {fileID: 72225953}
     - target: {fileID: 8728341090310661896, guid: 5dcb8a499b2793441b53553f8dd6d599,
         type: 3}
       propertyPath: _bulletPool

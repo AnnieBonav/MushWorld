@@ -34,11 +34,6 @@ public class InventorySlot : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(gameObject);
     }
 
-    public void DeactivateSelection()
-    {
-        // _button.OnDeselect();
-    }
-
     /*public override void OnDrop(PointerEventData eventData)
     {
         _eventData = eventData;

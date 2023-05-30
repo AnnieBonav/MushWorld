@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// REMEMBER Inventory Slot has NO Grabbable, it has an InventoryItem that contains the grabbable
 public class InventoryUIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject _bigInventoryUI;
@@ -13,6 +15,7 @@ public class InventoryUIHandler : MonoBehaviour
     private bool _smallInventoryActive = false;
 
     private int _selectedSlot = 0;
+    public Grabbable SelectedGrabbable; // TODO: Change so the architecture is better. This is public so the Eyes visualizer can use it to spawn something  Should the inventory manager spawn it?
 
     [SerializeField] private List<InventorySlot> _inventorySlots; // Duplicated from InventoryManager, good to have to make it work
 
@@ -52,6 +55,8 @@ public class InventoryUIHandler : MonoBehaviour
             _selectedSlot += inputValue;
         }
         _inventorySlots[_selectedSlot].ActivateSelection();
+        SelectedGrabbable = _inventorySlots[_selectedSlot].GetComponentInChildren<InventoryItem>().grabbable; // Gets the grabable sop the eyes visualizer can use it, can be null TODO: Make the architecture better
+        // TODO: Because the selected item is when you change selection, if you add an element on a slot you were already in you do not recognize there is an element. CHANGE ARCHITECTURE
     }
 
     public void OnActivateInventoryWindow(InputValue value)
