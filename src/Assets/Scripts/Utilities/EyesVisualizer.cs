@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class EyesVisualizer : MonoBehaviour
 {
     public static event Action<Grabbable> ConsumedGrabbable;
+    public static event Action<string> ConsumedFood; // This is a quick way of eating food, the archietcture is BAD
 
     [SerializeField] private InventoryUIHandler _inventoryUIHandler;
 
@@ -36,7 +37,14 @@ public class EyesVisualizer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, _rayLength))
         {
+            if (hit.collider.gameObject.CompareTag("Food"))
+            {
+                ConsumedFood?.Invoke(hit.collider.gameObject.name);
+                return; // Was food, so it is handled differently
+            }
+
             if (!hit.collider.gameObject.CompareTag("Grabbable")) return; // Returns if it is not grabbale
+
             Grabbable tempGrabbable = hit.collider.gameObject.GetComponent<Grabbable>();
             if (tempGrabbable != null)
             {
