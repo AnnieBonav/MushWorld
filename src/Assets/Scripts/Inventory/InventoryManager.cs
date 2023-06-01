@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal.Profiling.Memory.Experimental;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static event Action ConsumedAllCollectibles;
     private CollectedGrabbables _collectedGrabbables;
     [SerializeField] private GameObject _smallInventoryUI;
 
@@ -27,7 +29,14 @@ public class InventoryManager : MonoBehaviour
         }
 
         Grabbable.CollectedGrabbable += AddItem;
+        EyesVisualizer.ConsumedGrabbable += ConsumeItem;
 
+    }
+
+    private void OnDisable()
+    {
+        Grabbable.CollectedGrabbable -= ConsumeItem;
+        EyesVisualizer.ConsumedGrabbable -= ConsumeItem;
     }
 
     // To add an InventoryItem, I collected a grabbable
@@ -35,35 +44,55 @@ public class InventoryManager : MonoBehaviour
     {
         // If amount is -1, it did not exist. If it is anything else, it existed and now we only need to add
         int currentAmount = _collectedGrabbables.Add(grabbable);
-
-        if(currentAmount <= 0)
+        if (currentAmount <= 0)
         {
-            print("Spawning new item");
+            print("Did not exist.");
             for (int i = 0; i < _inventorySlots.Count; i++)
             {
                 InventorySlot slot = _inventorySlots[i];
                 InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-                if (itemInSlot == null)
+                print("Item in slot: " + itemInSlot);
+
+                if (itemInSlot == null) // TODO: Change the logic because this smells?
                 {
                     SpawnNewItem(grabbable, slot);
                     return;
                 }
             }
+            return;
         }
 
-        print("Updating amount");
-        for(int i = 0; i < _inventorySlots.Count; i++)
+        for (int i = 0; i < _inventorySlots.Count; i++)
         {
             InventorySlot slot = _inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            if(grabbable == itemInSlot.grabbable)
+            print("Item in slot: " + itemInSlot);
+
+            if (itemInSlot != null && grabbable == itemInSlot.grabbable)
             {
                 itemInSlot.UpdateAmount(currentAmount);
             }
         }
-        // If item did exist, then add to the number
+    }
 
-        
+    public void ConsumeItem(Grabbable grabbable)
+    {
+        int currentAmount = _collectedGrabbables.Consume(grabbable);
+        for (int i = 0; i < _inventorySlots.Count; i++)
+        {
+            InventorySlot slot = _inventorySlots[i];
+            InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+            if (itemInSlot != null && grabbable == itemInSlot.grabbable)
+            {
+                if(currentAmount <= 0)
+                {
+                    Destroy(itemInSlot.gameObject);
+                    ConsumedAllCollectibles?.Invoke(); // Gets invoked so UI Handler removes the selected grabbable
+                    return;
+                }
+                itemInSlot.UpdateAmount(currentAmount);
+            }
+        }        
     }
 
     private void SpawnNewItem(Grabbable collectedGrabbable, InventorySlot slot)
@@ -71,8 +100,6 @@ public class InventoryManager : MonoBehaviour
         GameObject newItem = Instantiate(_inventoryItemPrefab, slot.transform);
         InventoryItem inventoryItem = newItem.GetComponent<InventoryItem>();
         inventoryItem.Initialize(collectedGrabbable);
-
-        
     }
 
     public void TestAddBig()

@@ -28,6 +28,13 @@ public class InventoryUIHandler : MonoBehaviour
         {
             _inventorySlots.Add(_smallInventoryUI.transform.GetChild(i).GetComponent<InventorySlot>());
         }
+
+        InventoryManager.ConsumedAllCollectibles += RemoveCollectible;
+    }
+
+    private void RemoveCollectible()
+    {
+        SelectedGrabbable = null; // TODO: Should like not exist and I should access the Selected grabbable from the inventory manager or just handle everything with observable?
     }
 
     private void Start()
@@ -55,7 +62,16 @@ public class InventoryUIHandler : MonoBehaviour
             _selectedSlot += inputValue;
         }
         _inventorySlots[_selectedSlot].ActivateSelection();
-        SelectedGrabbable = _inventorySlots[_selectedSlot].GetComponentInChildren<InventoryItem>().grabbable; // Gets the grabable sop the eyes visualizer can use it, can be null TODO: Make the architecture better
+        InventoryItem inventoryItem = _inventorySlots[_selectedSlot].GetComponentInChildren<InventoryItem>();
+        if(inventoryItem != null)
+        {
+            SelectedGrabbable = inventoryItem.grabbable; // Gets the grabable sop the eyes visualizer can use it
+            // TODO: Make the architecture better
+        }
+        else
+        {
+            SelectedGrabbable = null; // If there is nothing on the new selected slot, then the prefab is removed (if not, the old one remains selected)
+        }
         // TODO: Because the selected item is when you change selection, if you add an element on a slot you were already in you do not recognize there is an element. CHANGE ARCHITECTURE
     }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class EyesVisualizer : MonoBehaviour
 {
+    public static event Action<Grabbable> ConsumedGrabbable;
+
     [SerializeField] private InventoryUIHandler _inventoryUIHandler;
 
     private LineRenderer _trail;
@@ -49,11 +52,12 @@ public class EyesVisualizer : MonoBehaviour
         bool hitFloor = Physics.Raycast(ray, out hit, _rayLength);
 
         Grabbable instancedGrabbable = _inventoryUIHandler.SelectedGrabbable;
-        print("I am trying to place");
         if(instancedGrabbable != null) // If there was actually a grabbable
         {
-            print("Wants to instance a grabbable");
-            Instantiate(instancedGrabbable, hit.point, Quaternion.identity);
+            Grabbable newGrabbable = Instantiate(instancedGrabbable, hit.point, Quaternion.identity);
+            newGrabbable.SetDestroys();
+            ConsumedGrabbable?.Invoke(instancedGrabbable); // Lets know the Inventory manager something was consumed
+            // TODO: Maybe this should follow the same logic in the Grab? So instead of mushrooms emmitiing the action it is the eyes visualizer that grabs it
         }
     }
 

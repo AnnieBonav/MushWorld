@@ -6,8 +6,6 @@ using System;
 
 public class CharacterController : MonoBehaviour
 {
-    public static event Action<GameObject> GrabbedInventorySlot;
-
     [SerializeField] private float _lookSensitivity = 8f;
     [SerializeField] private float _moveSensitivity = 1;
     [SerializeField] private float _moveSpeed = 40;
@@ -22,7 +20,6 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 _respawnPosition;
 
-    private Vector3 _cameraOrigin = new Vector3(0.5f, 0.5f, 0f);
     [SerializeField] private float _rayLength = 50f;
 
 

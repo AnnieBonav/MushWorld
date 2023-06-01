@@ -37,7 +37,6 @@ public class Bullet : MonoBehaviour
     private IEnumerator Live()
     {
         yield return new WaitForSeconds(_timeToLive);
-        print("I am deactivating");
         Deactivate();
     }
 }

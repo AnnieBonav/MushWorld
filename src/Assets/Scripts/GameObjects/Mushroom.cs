@@ -7,13 +7,14 @@ public enum MushroomType { Live, Dizzy, Speed, Small, Big }
 public class Mushroom : Grabbable
 {
     public static event Action<int> CollectedMushroom;
+
     [SerializeField] private MushroomType _type;
     [SerializeField] private int _points;
 
     public override void Grab()
     {
-        DoAction();
-        base.Grab();
+        // DoAction(); // TODO: Add sensible actions
+        base.Grab(); // This starts a collected grababble action (on parent grabbable) that lets inventory manager know something happened
     }
 
     private void DoAction() // TODO: Make delegate or smt so the function that is called is just asisgned when the mushroom is created and does not need to be checked at runtime

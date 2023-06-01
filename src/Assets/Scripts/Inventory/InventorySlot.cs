@@ -7,12 +7,9 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour
 {
-    private Button _button;
     private void Awake()
     {
-        // Listens to UI event that says that something was selected to see if it was selected
-        _button = GetComponent<Button>();
-        CharacterController.GrabbedInventorySlot += CheckIfGrabbed;
+
     }
 
     private void CheckIfGrabbed(GameObject itemGrabbed)

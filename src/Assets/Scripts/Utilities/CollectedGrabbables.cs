@@ -17,17 +17,35 @@ public class CollectedGrabbables
             {
                 int newAmount = collectedGrabbablePair.Value + 1;
                 _collectedGrabbables[tempGrabable] = newAmount;
-                Debug.Log("Added to existing");
                 return newAmount;
             }
         }
 
         _collectedGrabbables.Add(collectedGrabbable, 1);
-        Debug.Log("Added new one");
         return -1;
     }
 
-    public void RemovecollectedGrabbable(Grabbable removedGrabbable)
+    public int Consume(Grabbable consumedGrabbable)
+    {
+        foreach (KeyValuePair<Grabbable, int> collectedGrabbablePair in _collectedGrabbables)
+        {
+            Grabbable tempGrabable = collectedGrabbablePair.Key;
+            if (consumedGrabbable == tempGrabable)
+            {
+                int newAmount = collectedGrabbablePair.Value - 1;
+                _collectedGrabbables[tempGrabable] = newAmount;
+
+                if(newAmount <= 0)
+                {
+                    RemoveCollectedGrabbable(tempGrabable);
+                }
+                return newAmount;
+            }
+        }
+        return -1; // This will not happen
+    }
+
+    public void RemoveCollectedGrabbable(Grabbable removedGrabbable)
     {
         _collectedGrabbables.Remove(removedGrabbable);
     }

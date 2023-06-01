@@ -27,15 +27,14 @@ public class InventoryItem : MonoBehaviour
 
     public void InstantiateMushroom()
     {
-        print("I am a child instantiating a mushroom");
         Instantiate(_grabbable, new Vector3(0, 0, 0), Quaternion.identity);
     }
 
     public void UpdateAmount(int newAmount)
     {
-        print("New amount: " + newAmount);
         _amountText.text = newAmount.ToString();
     }
+
     /*public void OnBeginDrag(PointerEventData eventData)
     {
         print("Began drag");

@@ -30,6 +30,7 @@ public class UIHandler : MonoBehaviour
 
     private void Awake()
     {
+        Cursor.visible = false;
         _pauseMenu.SetActive(false);
         _backgroundUI.SetActive(false);
         _livesText.text = _livesAmount.ToString();
