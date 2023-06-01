@@ -16,8 +16,7 @@ public class UIHandler : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private TMP_Text _livesText;
     private int _livesAmount = 0;
-    [SerializeField] private GameObject _pauseMenu;
-    [SerializeField] private GameObject _backgroundUI;
+    
 
     [Header("Player Input")]
     [SerializeField] private PlayerInput _playerInput;
@@ -26,13 +25,11 @@ public class UIHandler : MonoBehaviour
     private InputActionMap _UIMap;
     private InputActionMap _playerMap;
 
-    private bool _isPaused = false;
 
     private void Awake()
     {
         Cursor.visible = false;
-        _pauseMenu.SetActive(false);
-        _backgroundUI.SetActive(false);
+        
         _livesText.text = _livesAmount.ToString();
         // Mushroom.CollectedMushroom += UpdateLives; // TODO: Change to hear from hearts collected
         
@@ -43,20 +40,7 @@ public class UIHandler : MonoBehaviour
         // _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
     }
 
-    public void OnPause(InputValue value)
-    {
-        if (_isPaused)
-        {
-            _isPaused = false;
-        }
-        else
-        {
-            _isPaused = true;
-        }
-
-        _pauseMenu.SetActive(_isPaused);
-        _backgroundUI.SetActive(_isPaused);
-    }
+    
 
     private void FinishedSwitchedSelectedItem(InputAction.CallbackContext context)
     {
@@ -110,11 +94,6 @@ public class UIHandler : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-    
-
-    
-    
-
     // Navigates between the items on the inventory
     public void OnNavigate(InputValue value)
     {
@@ -127,7 +106,7 @@ public class UIHandler : MonoBehaviour
         
         // _inventoryIsActive = false; // TODO: This disabling going through the inventory could be prettier than checking every time the player moves
         // ModifyInventory();
-        GameObject selectedGameObject = EventSystem.current.currentSelectedGameObject;
+        // GameObject selectedGameObject = EventSystem.current.currentSelectedGameObject;
         // If the selected item was an InventorySlot, I save it. If not, I can always go back to the selected one
         /* if (selectedGameObject.CompareTag("InventorySlot"))
         {
