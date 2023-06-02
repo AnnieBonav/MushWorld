@@ -1832,7 +1832,7 @@ GameObject:
   - component: {fileID: 6916474090071722502}
   - component: {fileID: 6933040217604360210}
   m_Layer: 5
-  m_Name: Place
+  m_Name: Consume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1855,7 +1855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 174.99994, y: 119}
+  m_AnchoredPosition: {x: 150, y: 119}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6916474090071722502
@@ -1886,7 +1886,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Place
+  m_text: Consume
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bf208b821a220464d85c4ab7f791615b, type: 2}
   m_sharedMaterial: {fileID: -7165867816594036930, guid: bf208b821a220464d85c4ab7f791615b,
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 6633333867432416518}
   - component: {fileID: 8135904020231827782}
   m_Layer: 5
-  m_Name: Consume
+  m_Name: Place
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2233,7 +2233,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Consume
+  m_text: 'Place
 
 '
   m_isRightToLeft: 0
