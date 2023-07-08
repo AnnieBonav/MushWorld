@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F9BF1540-F6D1-40FD-9066-CE93CCDADAB7}" SchemaVersion="103">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{F9BF1540-F6D1-40FD-9066-CE93CCDADAB7}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Default" ID="{E502D48B-D08B-4AD4-827F-84DBFF7A010B}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_GlassClink" ID="{189F005D-1128-4129-B13A-B27340B4E5B1}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_Bubbles" ID="{52A55505-ADAB-4184-9026-138783F173A4}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_HoverButton" ID="{65E2D28F-602D-421C-BA16-1548D2A732FA}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SelectButton" ID="{F3897002-BD40-42EF-B2C2-75F792202D8C}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Pop" ID="{30148DE6-2C3C-43D4-9D4A-DD2DC18061E9}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Food" ID="{D784F71B-5B95-46B2-A666-AC57F3915AD0}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BackgroundMusic" ID="{FEC23344-B90E-4767-8482-88E43BAB2363}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_River" ID="{6F32172A-A000-47BF-B227-343E1F038D22}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Potions" ID="{370E9EEE-6CD1-4952-B054-4D29E6E79BE0}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Roll" ID="{4ACE36F7-D05A-4AFA-91C0-6E84612CBD89}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_PlaceObject" ID="{0C51C5F3-0CAB-4D0C-B796-4F32116A208D}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Bubbles" ID="{28467B2D-5849-4DF1-A73C-D52A82B39F41}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Footsteps" ID="{850D3EC6-0CEC-4E9B-820F-F59C4B69C2D0}" WorkUnitID="{EAEB0272-8A4A-4B0D-BC92-3FF3467D09FD}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

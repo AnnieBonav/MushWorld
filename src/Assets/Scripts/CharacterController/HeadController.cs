@@ -10,12 +10,8 @@ public class HeadController : MonoBehaviour
     [SerializeField] private float _anglePerSecond = 2f;
     [SerializeField] private float _minX = 320;
     [SerializeField] private float _maxX = 40;
-    private float _verticalMovement;
 
-    private void Awake()
-    {
-        
-    }
+    private float _verticalMovement;
 
     private void FixedUpdate()
     {

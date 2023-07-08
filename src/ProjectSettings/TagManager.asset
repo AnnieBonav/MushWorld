@@ -8,6 +8,9 @@ TagManager:
   - Grabbable
   - InventorySlot
   - Ground
+  - Fluid
+  - Drink
+  - DoNotDestroy
   layers:
   - Default
   - TransparentFX

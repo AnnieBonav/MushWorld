@@ -3,14 +3,15 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using System;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] private float _lookSensitivity = 8f;
-    [SerializeField] private float _moveSensitivity = 1;
+    [SerializeField] private float _moveSensitivity = 1; // TODO: Make slider
     [SerializeField] private float _moveSpeed = 40;
     [SerializeField] private float _jumpForce = 200;
-    [SerializeField] private bool _grabDebug = false;
 
     private Rigidbody _rb;
     private Transform _transform;
@@ -20,8 +21,11 @@ public class CharacterController : MonoBehaviour
 
     private Vector3 _respawnPosition;
 
-    [SerializeField] private float _rayLength = 50f;
+    private WaitForSeconds _waitStep = new WaitForSeconds(0.5f);
+    [SerializeField] private string _footstepsEvent = "Play_Footsteps";
 
+    [SerializeField] private Vector3 _initialPositionRoom = new Vector3(18, 22.4f, -66);
+    [SerializeField] private Vector3 _initialPositionWorld = new Vector3(-300, -284, 0);
 
     private void Awake()
     {
@@ -29,6 +33,41 @@ public class CharacterController : MonoBehaviour
         _transform = GetComponent<Transform>();
         _respawnPosition = transform.position;
         Respawn.NeedRespawn += HandleRespawn;
+        StartCoroutine(WalkSound());
+
+        SceneManager.activeSceneChanged += PlaceCharacter;
+    }
+
+    private void PlaceCharacter(Scene currentScene, Scene nextScene)
+    {
+        if(nextScene.name == "MainScene")
+        {
+            transform.position = _initialPositionWorld;
+            AkSoundEngine.SetState("music", "chill");
+        }
+        else if(nextScene.name == "Room")
+        {
+            transform.position = _initialPositionRoom;
+            AkSoundEngine.SetState("music", "dark");
+        }
+
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    private IEnumerator WalkSound()
+    {
+        while(true)
+        {
+            yield return _waitStep;
+            if (_rb.velocity.magnitude > 0.1)
+            {
+                AkSoundEngine.PostEvent(_footstepsEvent, gameObject);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -46,7 +85,7 @@ public class CharacterController : MonoBehaviour
     private void HandleMove()
     {
         _movement = _transform.TransformDirection(_impulse);
-        _rb.AddForce(_movement * _moveSpeed);
+        _rb.AddForce(_movement * _moveSpeed * _moveSensitivity);
     }
 
     public void OnLookHorizontal(InputValue value)

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7371437A-9666-47F2-938E-275C5C7CCF7A}" SchemaVersion="103">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{7371437A-9666-47F2-938E-275C5C7CCF7A}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="default" ID="{49F85C1E-63C7-4A43-94DC-FAFCA4E93D5F}">
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="bubblesIntensity" ID="{2A910225-D611-4112-8A35-A638A347704A}"/>
+							<Value>25.3663003663004</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="uiVolume" ID="{11B67547-B569-4402-AA4C-A62C6FFE3B7D}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="sfxVolume" ID="{A34AD974-EC89-4715-BE4A-99E4A64C0F73}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="backgroundState" ID="{1793ADD5-80F4-4E1A-95A5-1EC6DE0B17CA}"/>
+							<Value>58.4745762711864</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="musicVolume" ID="{14493680-2616-4E48-AC68-99FC589BADF6}"/>
+							<Value>100</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="dark" ID="{5F550DFD-2C7E-4F2C-BD24-0A5D9FDA0E63}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Dirt" ID="{E6B0DE3E-715A-41F4-AEA3-92C4EFCC11E6}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

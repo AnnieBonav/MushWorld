@@ -1,0 +1,82 @@
+Event	ID	Name			Wwise Object Path	Notes
+	348159706	Play_SelectButton			\Default Work Unit\UI\Play_SelectButton	
+	548088167	Play_BackgroundMusic			\Default Work Unit\Play_BackgroundMusic	
+	1498169336	Play_River			\Default Work Unit\Ambient\Play_River	
+	1853731994	Play_Potions			\Default Work Unit\Play_Potions	
+	1962155989	Stop_Bubbles			\Default Work Unit\Stop_Bubbles	
+	2174888429	Play_GlassClink			\Default Work Unit\Play_GlassClink	
+	2663980450	Play_Food			\Default Work Unit\Play_Food	
+	2719919427	Play_Roll			\Default Work Unit\Play_Roll	
+	2990278359	Play_Pop			\Default Work Unit\Play_Pop	
+	3078336690	Play_PlaceObject			\Default Work Unit\Play_PlaceObject	
+	3130647524	Play_HoverButton			\Default Work Unit\UI\Play_HoverButton	
+	3381697299	Play_Bubbles			\Default Work Unit\Play_Bubbles	
+	3854155799	Play_Footsteps			\Default Work Unit\Ambient\Play_Footsteps	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Footsteps	
+
+Switch	ID	Name	Switch Group			Notes
+	787898836	Snow	Footsteps			
+	2195636714	Dirt	Footsteps			
+	2654748154	Water	Footsteps			
+	4248645337	Grass	Footsteps			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	3991942870	music			\Default Work Unit\music	
+
+State	ID	Name	State Group			Notes
+	748895195	None	music			
+	1925914845	dark	music			
+	3049429082	birthday	music			
+	4294400669	chill	music			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	50111242	chill	music	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\DarkBG		
+	60449758	birthday	music	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\ChillBG		
+	610534074	dark	music	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\ChillBG		
+	643715732	birthday	music	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\DarkBG		
+	890268439	dark	music	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\Song_LasMananitas		
+	890879338	chill	music	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\Song_LasMananitas		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	988953028	sfxVolume			\Default Work Unit\sfxVolume	
+	2346531308	musicVolume			\Default Work Unit\musicVolume	
+	3064925121	bubblesIntensity			\Default Work Unit\bubblesIntensity	
+	3415057477	uiVolume			\Default Work Unit\uiVolume	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	28149340	af-roll-04	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\af-roll-04_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Class\Roll\af-roll-04		22804
+	80844630	SFX_Grass_Step2	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Grass_Step2_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Footsteps\Footsteps_Grass\SFX_Grass_Step2		2420
+	127279069	SFX_Swoop	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Swoop_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\PlaceObject\SFX_Swoop		2288
+	141797518	SFX_Bubbles_VeryFast	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Bubbles_VeryFast_C1316034.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VeryFast		140919
+	159618082	af-roll-00	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\af-roll-00_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Class\Roll\af-roll-00		7131
+	161794891	af-roll-03	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\af-roll-03_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Class\Roll\af-roll-03		10639
+	189377061	MushReaper_Pop2	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\MushReaper_Pop2_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Pop\MushReaper_Pop2		1355
+	239895459	af-roll-05	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\af-roll-05_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Class\Roll\af-roll-05		16677
+	249607653	SFX_ButtonNavigation	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_ButtonNavigation_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\HoverButton\SFX_ButtonNavigation		485
+	394271540	SFX_BubblePop_HigherPitch	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_BubblePop_HigherPitch_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SelectButton\SFX_BubblePop_HigherPitch		558
+	402003346	SFX_WaterSplash_1	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_WaterSplash_1_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Footsteps\Footsteps_Water\SFX_WaterSplash_1		18064
+	428218113	SFX_Swoop2	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Swoop2_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\PlaceObject\SFX_Swoop2		2256
+	522934169	SFX_BubblePop_NormalPitch	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_BubblePop_NormalPitch_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SelectButton\SFX_BubblePop_NormalPitch		553
+	598252076	SFX_Footstep_Snow	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Footstep_Snow_26F7D245.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Footsteps\Footsteps_Snow\SFX_Footstep_Snow		4008
+	638388669	SFX_Bubbles_VerySlow	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Bubbles_VerySlow_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_VerySlow		144619
+	661100885	SFX_Grass_Step3	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Grass_Step3_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Footsteps\Footsteps_Grass\SFX_Grass_Step3		2558
+	701029829	SFX_Bubbles_Fast	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Bubbles_Fast_8D8AA411.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Fast		122094
+	762486931	SFX_Footstep_Grass	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Footstep_Dirt_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Footsteps\Footsteps_Dirt\SFX_Footstep_Grass		5075
+	778969619	SFX_WaterSplash_2	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_WaterSplash_2_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Footsteps\Footsteps_Water\SFX_WaterSplash_2		28559
+	843341684	af-roll-01	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\af-roll-01_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Class\Roll\af-roll-01		4431
+	844133327	af-roll-02	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\af-roll-02_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Class\Roll\af-roll-02		9264
+	849670723	SFX_GlassClink	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_GlassClink_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\GlassClink\SFX_GlassClink		5680
+	850423547	MushReaper_Pop1	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\MushReaper_Pop1_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Pop\MushReaper_Pop1		803
+	883548370	SFX_DarkGlassClink	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_DarkGlassClink_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Potions\SFX_DarkGlassClink		28964
+	944695808	SFX_Bite	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Bite_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Props\Food\SFX_Bite		4116
+	961855423	SFX_Bubbles_Slow	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Bubbles_Slow_94F73E8C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Bubbles\SFX_Bubbles_Slow		127500
+	1009288511	RiverSlowClose	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\RiverSlowClose_4766FE73.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\River\RiverSlowClose		1788641
+	1029228050	SFX_Grass_Step1	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\SFX_Grass_Step1_CD8EDA95.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ambient\Footsteps\Footsteps_Grass\SFX_Grass_Step1		2718
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	176095699	ChillBG	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\Reminisce_4766FE73.wem	176095699.wem	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\ChillBG	
+	886529612	Song_LasMananitas	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\Song_LasMananitas_2244F33A.wem	886529612.wem	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\Song_LasMananitas	
+	914804807	DarkBG	C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\SFX\AdventureBackgroundMusic_9FFA259B.wem	914804807.wem	\Actor-Mixer Hierarchy\Default Work Unit\Ambient\BackgroundMusic\DarkBG	
+

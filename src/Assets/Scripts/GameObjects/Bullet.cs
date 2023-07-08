@@ -4,7 +4,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _timeToLive = 5;
-    [SerializeField] private bool _killOverTime = false;
     [SerializeField] private float _speed = 130;
     [SerializeField] private int _damage = 2;
 
@@ -13,6 +12,10 @@ public class Bullet : MonoBehaviour
     public int Damage
     {
         get { return _damage; }
+    }
+    private void FixedUpdate()
+    {
+        transform.Translate(_parentTransform.forward * _speed);
     }
 
     public void Activate(Transform parentTransform)
@@ -26,12 +29,6 @@ public class Bullet : MonoBehaviour
     public void Deactivate()
     {
         gameObject.SetActive(false);
-    }
-
-    private void FixedUpdate()
-    {
-        transform.Translate(_parentTransform.forward * _speed);
-        // transform.LookAt(camera.mmain.tramsform.position + Camera.,main,transform.forward)
     }
 
     private IEnumerator Live()

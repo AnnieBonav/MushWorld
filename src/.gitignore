@@ -76,6 +76,21 @@ crashlytics-build.properties
 
 # Other
 **/OtherAssets/
-**/StreamingAssets/
-**/Wwise/
-**/src_WwiseProject
+**/polyperfect/
+
+# Other
+**/[Ss]amples/
+**/ShadersPlayground/
+**/Android/
+**/Android.meta
+
+#WWise
+.backup*
+.cache*
+*.akd
+*.prof
+*.validationcache
+*.wsettings
+AKWwiseProjectData.asset
+IncrementalSoundBankData.xml
+PluginInfo.xmlSoundbanksInfo.xml

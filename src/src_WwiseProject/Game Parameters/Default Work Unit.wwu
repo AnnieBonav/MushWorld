@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{721911D4-CE9E-4123-95D2-F707F8F0527E}" SchemaVersion="103">
+	<GameParameters>
+		<WorkUnit Name="Default Work Unit" ID="{721911D4-CE9E-4123-95D2-F707F8F0527E}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="musicVolume" ID="{14493680-2616-4E48-AC68-99FC589BADF6}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="sfxVolume" ID="{A34AD974-EC89-4715-BE4A-99E4A64C0F73}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="uiVolume" ID="{11B67547-B569-4402-AA4C-A62C6FFE3B7D}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="backgroundState" ID="{1793ADD5-80F4-4E1A-95A5-1EC6DE0B17CA}"/>
+				<GameParameter Name="bubblesIntensity" ID="{2A910225-D611-4112-8A35-A638A347704A}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

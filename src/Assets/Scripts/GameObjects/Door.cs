@@ -6,14 +6,17 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     [SerializeField] private string _levelName;
+
     public void LoadLevel()
     {
-        print("Trying to load level " + _levelName);
         SceneManager.LoadSceneAsync(_levelName);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        LoadLevel();
+        if (collider.CompareTag("Player"))
+        {
+            LoadLevel();
+        }
     }
 }

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>C:\Projects\MushWorld\src\src_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Projects\MushWorld\src\src_WwiseProject\.cache\Mac\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Projects\MushWorld\src\src_WwiseProject\GeneratedSoundBanks\Mac\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Projects\MushWorld\src\src_WwiseProject\GeneratedSoundBanks\Mac</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles>
+		<File Id="176095699" Language="SFX">
+			<ShortName>Reminisce.wav</ShortName>
+			<Path>SFX\Reminisce_4766FE73.wem</Path>
+		</File>
+		<File Id="886529612" Language="SFX">
+			<ShortName>Song_LasMananitas.wav</ShortName>
+			<Path>SFX\Song_LasMananitas_2244F33A.wem</Path>
+		</File>
+		<File Id="914804807" Language="SFX">
+			<ShortName>AdventureBackgroundMusic.wav</ShortName>
+			<Path>SFX\AdventureBackgroundMusic_9FFA259B.wem</Path>
+		</File>
+	</StreamedFiles>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="782826392" Language="SFX" Hash="2999164322">
+			<ObjectPath>\SoundBanks\Default Work Unit\Default</ObjectPath>
+			<ShortName>Default</ShortName>
+			<Path>Default.bnk</Path>
+			<IncludedEvents>
+				<Event Id="548088167" Name="Play_BackgroundMusic" ObjectPath="\Events\Default Work Unit\Play_BackgroundMusic" DurationType="Infinite">
+					<ReferencedStreamedFiles>
+						<File Id="176095699" Language="SFX">
+							<ShortName>Reminisce.wav</ShortName>
+							<Path>SFX\Reminisce_4766FE73.wem</Path>
+						</File>
+						<File Id="886529612" Language="SFX">
+							<ShortName>Song_LasMananitas.wav</ShortName>
+							<Path>SFX\Song_LasMananitas_2244F33A.wem</Path>
+						</File>
+						<File Id="914804807" Language="SFX">
+							<ShortName>AdventureBackgroundMusic.wav</ShortName>
+							<Path>SFX\AdventureBackgroundMusic_9FFA259B.wem</Path>
+						</File>
+					</ReferencedStreamedFiles>
+				</Event>
+				<Event Id="3381697299" Name="Play_Bubbles" ObjectPath="\Events\Default Work Unit\Play_Bubbles" MaxAttenuation="10." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="141797518" Language="SFX">
+							<ShortName>SFX_Bubbles_VeryFast.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_VeryFast_C1316034.wem</Path>
+						</File>
+						<File Id="638388669" Language="SFX">
+							<ShortName>SFX_Bubbles_VerySlow.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_VerySlow_4766FE73.wem</Path>
+						</File>
+						<File Id="701029829" Language="SFX">
+							<ShortName>SFX_Bubbles_Fast.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_Fast_8D8AA411.wem</Path>
+						</File>
+						<File Id="961855423" Language="SFX">
+							<ShortName>SFX_Bubbles_Slow.wav</ShortName>
+							<Path>SFX\SFX_Bubbles_Slow_94F73E8C.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2663980450" Name="Play_Food" ObjectPath="\Events\Default Work Unit\Play_Food" MaxAttenuation="4." DurationType="OneShot" DurationMin="0.245108" DurationMax="0.308817">
+					<IncludedMemoryFiles>
+						<File Id="944695808" Language="SFX">
+							<ShortName>SFX_Bite.wav</ShortName>
+							<Path>SFX\SFX_Bite_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3854155799" Name="Play_Footsteps" ObjectPath="\Events\Default Work Unit\Ambient\Play_Footsteps" DurationType="OneShot" DurationMin="0.228576" DurationMax="203.144043">
+					<IncludedMemoryFiles>
+						<File Id="80844630" Language="SFX">
+							<ShortName>SFX_Grass_Step2.wav</ShortName>
+							<Path>SFX\SFX_Grass_Step2_CD8EDA95.wem</Path>
+						</File>
+						<File Id="402003346" Language="SFX">
+							<ShortName>SFX_WaterSplash_1.wav</ShortName>
+							<Path>SFX\SFX_WaterSplash_1_CD8EDA95.wem</Path>
+						</File>
+						<File Id="598252076" Language="SFX">
+							<ShortName>SFX_Footstep_Snow.wav</ShortName>
+							<Path>SFX\SFX_Footstep_Snow_26F7D245.wem</Path>
+						</File>
+						<File Id="661100885" Language="SFX">
+							<ShortName>SFX_Grass_Step3.wav</ShortName>
+							<Path>SFX\SFX_Grass_Step3_CD8EDA95.wem</Path>
+						</File>
+						<File Id="762486931" Language="SFX">
+							<ShortName>SFX_Footstep_Dirt.wav</ShortName>
+							<Path>SFX\SFX_Footstep_Dirt_CD8EDA95.wem</Path>
+						</File>
+						<File Id="778969619" Language="SFX">
+							<ShortName>SFX_WaterSplash_2.wav</ShortName>
+							<Path>SFX\SFX_WaterSplash_2_CD8EDA95.wem</Path>
+						</File>
+						<File Id="1029228050" Language="SFX">
+							<ShortName>SFX_Grass_Step1.wav</ShortName>
+							<Path>SFX\SFX_Grass_Step1_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<DefaultSwitchValue>{22DB7A4D-3082-406E-9C7E-D0865334573E}</DefaultSwitchValue>
+					<SwitchContainers>
+						<SwitchContainer SwitchValue="{E6B0DE3E-715A-41F4-AEA3-92C4EFCC11E6}">
+							<Media>
+								<File Id="762486931"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{22DB7A4D-3082-406E-9C7E-D0865334573E}">
+							<Media>
+								<File Id="80844630"/>
+								<File Id="661100885"/>
+								<File Id="1029228050"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{E2205DB2-DDD9-45AA-A37E-DFC0005084BC}">
+							<Media>
+								<File Id="402003346"/>
+								<File Id="778969619"/>
+							</Media>
+						</SwitchContainer>
+						<SwitchContainer SwitchValue="{3BFAC2C8-F304-46DC-9847-896391D57D26}">
+							<Media>
+								<File Id="598252076"/>
+							</Media>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="2174888429" Name="Play_GlassClink" ObjectPath="\Events\Default Work Unit\Play_GlassClink" MaxAttenuation="4." DurationType="OneShot" DurationMin="0.445449" DurationMax="0.561231">
+					<IncludedMemoryFiles>
+						<File Id="849670723" Language="SFX">
+							<ShortName>SFX_GlassClink.wav</ShortName>
+							<Path>SFX\SFX_GlassClink_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3130647524" Name="Play_HoverButton" ObjectPath="\Events\Default Work Unit\UI\Play_HoverButton" DurationType="OneShot" DurationMin="0.267292" DurationMax="0.283186">
+					<IncludedMemoryFiles>
+						<File Id="249607653" Language="SFX">
+							<ShortName>SFX_ButtonNavigation.wav</ShortName>
+							<Path>SFX\SFX_ButtonNavigation_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3078336690" Name="Play_PlaceObject" ObjectPath="\Events\Default Work Unit\Play_PlaceObject" MaxAttenuation="30." DurationType="OneShot" DurationMin="0.477388" DurationMax="0.601472">
+					<IncludedMemoryFiles>
+						<File Id="127279069" Language="SFX">
+							<ShortName>SFX_Swoop.wav</ShortName>
+							<Path>SFX\SFX_Swoop_CD8EDA95.wem</Path>
+						</File>
+						<File Id="428218113" Language="SFX">
+							<ShortName>SFX_Swoop2.wav</ShortName>
+							<Path>SFX\SFX_Swoop2_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2990278359" Name="Play_Pop" ObjectPath="\Events\Default Work Unit\Play_Pop" MaxAttenuation="60." DurationType="OneShot" DurationMin="0.097999" DurationMax="0.123471">
+					<IncludedMemoryFiles>
+						<File Id="189377061" Language="SFX">
+							<ShortName>MushReaper_Pop2.wav</ShortName>
+							<Path>SFX\MushReaper_Pop2_CD8EDA95.wem</Path>
+						</File>
+						<File Id="850423547" Language="SFX">
+							<ShortName>MushReaper_Pop1.wav</ShortName>
+							<Path>SFX\MushReaper_Pop1_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1853731994" Name="Play_Potions" ObjectPath="\Events\Default Work Unit\Play_Potions" MaxAttenuation="40." DurationType="OneShot" DurationMin="161.235535" DurationMax="215.223633">
+					<IncludedMemoryFiles>
+						<File Id="883548370" Language="SFX">
+							<ShortName>SFX_DarkGlassClink.wav</ShortName>
+							<Path>SFX\SFX_DarkGlassClink_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<AuxBusSends>
+						<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Room_Reverb"/>
+					</AuxBusSends>
+				</Event>
+				<Event Id="1498169336" Name="Play_River" ObjectPath="\Events\Default Work Unit\Ambient\Play_River" MaxAttenuation="40." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="1009288511" Language="SFX">
+							<ShortName>RiverSlowClose.wav</ShortName>
+							<Path>SFX\RiverSlowClose_4766FE73.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2719919427" Name="Play_Roll" ObjectPath="\Events\Default Work Unit\Play_Roll" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="28149340" Language="SFX">
+							<ShortName>af-roll-04.wav</ShortName>
+							<Path>SFX\af-roll-04_4766FE73.wem</Path>
+						</File>
+						<File Id="159618082" Language="SFX">
+							<ShortName>af-roll-00.wav</ShortName>
+							<Path>SFX\af-roll-00_4766FE73.wem</Path>
+						</File>
+						<File Id="161794891" Language="SFX">
+							<ShortName>af-roll-03.wav</ShortName>
+							<Path>SFX\af-roll-03_4766FE73.wem</Path>
+						</File>
+						<File Id="239895459" Language="SFX">
+							<ShortName>af-roll-05.wav</ShortName>
+							<Path>SFX\af-roll-05_4766FE73.wem</Path>
+						</File>
+						<File Id="843341684" Language="SFX">
+							<ShortName>af-roll-01.wav</ShortName>
+							<Path>SFX\af-roll-01_4766FE73.wem</Path>
+						</File>
+						<File Id="844133327" Language="SFX">
+							<ShortName>af-roll-02.wav</ShortName>
+							<Path>SFX\af-roll-02_4766FE73.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="348159706" Name="Play_SelectButton" ObjectPath="\Events\Default Work Unit\UI\Play_SelectButton" DurationType="OneShot" DurationMin="0.544802" DurationMax="0.686407">
+					<IncludedMemoryFiles>
+						<File Id="394271540" Language="SFX">
+							<ShortName>SFX_BubblePop_HigherPitch.wav</ShortName>
+							<Path>SFX\SFX_BubblePop_HigherPitch_CD8EDA95.wem</Path>
+						</File>
+						<File Id="522934169" Language="SFX">
+							<ShortName>SFX_BubblePop_NormalPitch.wav</ShortName>
+							<Path>SFX\SFX_BubblePop_NormalPitch_CD8EDA95.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1962155989" Name="Stop_Bubbles" ObjectPath="\Events\Default Work Unit\Stop_Bubbles" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="988953028" Name="sfxVolume" ObjectPath="\Game Parameters\Default Work Unit\sfxVolume"/>
+				<GameParameter Id="2346531308" Name="musicVolume" ObjectPath="\Game Parameters\Default Work Unit\musicVolume"/>
+				<GameParameter Id="3064925121" Name="bubblesIntensity" ObjectPath="\Game Parameters\Default Work Unit\bubblesIntensity"/>
+				<GameParameter Id="3415057477" Name="uiVolume" ObjectPath="\Game Parameters\Default Work Unit\uiVolume"/>
+			</GameParameters>
+			<SwitchGroups>
+				<SwitchGroup Id="2385628198" Name="Footsteps" ObjectPath="\Switches\Default Work Unit\Footsteps" GUID="{9B87F460-6770-4680-99D7-B3FA545BBDB5}">
+					<Switches>
+						<Switch Id="2195636714" Name="Dirt" ObjectPath="\Switches\Default Work Unit\Footsteps\Dirt" GUID="{E6B0DE3E-715A-41F4-AEA3-92C4EFCC11E6}"/>
+						<Switch Id="787898836" Name="Snow" ObjectPath="\Switches\Default Work Unit\Footsteps\Snow" GUID="{3BFAC2C8-F304-46DC-9847-896391D57D26}"/>
+						<Switch Id="4248645337" Name="Grass" ObjectPath="\Switches\Default Work Unit\Footsteps\Grass" GUID="{22DB7A4D-3082-406E-9C7E-D0865334573E}"/>
+						<Switch Id="2654748154" Name="Water" ObjectPath="\Switches\Default Work Unit\Footsteps\Water" GUID="{E2205DB2-DDD9-45AA-A37E-DFC0005084BC}"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX" Hash="1524366925">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<IncludedAuxBusses>
+				<AuxBus Id="206373095" Name="Room_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Room_Reverb"/>
+				<AuxBus Id="3177428469" Name="Cave_Reverb" ObjectPath="\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Reverbs\Cave_Reverb"/>
+			</IncludedAuxBusses>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

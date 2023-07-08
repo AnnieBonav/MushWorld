@@ -7,14 +7,14 @@ using UnityEngine.InputSystem;
 public class EyesVisualizer : MonoBehaviour
 {
     public static event Action<Grabbable> ConsumedGrabbable;
-    public static event Action<string> ConsumedFood; // This is a quick way of eating food, the archietcture is BAD
 
     [SerializeField] private InventoryUIHandler _inventoryUIHandler;
+    [SerializeField] private float _rayLength = 50f;
+    [SerializeField] private Transform _origin;
+    [SerializeField] private bool _debugGrab = false;
 
     private LineRenderer _trail;
     private Vector3 _cameraOrigin = new Vector3(0.5f, 0.5f, 0f);
-    [SerializeField] private float _rayLength = 50f;
-    [SerializeField] private Transform _origin;
 
     private void Awake()
     {
@@ -37,12 +37,6 @@ public class EyesVisualizer : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, _rayLength))
         {
-            if (hit.collider.gameObject.CompareTag("Food"))
-            {
-                ConsumedFood?.Invoke(hit.collider.gameObject.name);
-                return; // Was food, so it is handled differently
-            }
-
             if (!hit.collider.gameObject.CompareTag("Grabbable")) return; // Returns if it is not grabbale
 
             Grabbable tempGrabbable = hit.collider.gameObject.GetComponent<Grabbable>();
@@ -50,7 +44,7 @@ public class EyesVisualizer : MonoBehaviour
             {
                 tempGrabbable.Grab();
             }
-            print("Hit something?: " + hit.collider.transform.name);
+            if(_debugGrab) print("Hit something?: " + hit.collider.transform.name);
         }
     }
     public void OnPlace(InputValue value)

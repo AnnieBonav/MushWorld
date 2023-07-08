@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{AB218DB2-A478-45A1-8CC4-8D4F3B8A8886}" SchemaVersion="103">
+	<States>
+		<WorkUnit Name="Default Work Unit" ID="{AB218DB2-A478-45A1-8CC4-8D4F3B8A8886}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="music" ID="{E6C6C3D1-833A-4725-8F1F-E9E5A98C9001}">
+					<ChildrenList>
+						<State Name="None" ID="{327546A8-6FDB-49E6-BAD5-1AD83C675C6E}"/>
+						<State Name="chill" ID="{82D486A0-570E-4C01-9F00-419AD38DD89F}"/>
+						<State Name="dark" ID="{5F550DFD-2C7E-4F2C-BD24-0A5D9FDA0E63}"/>
+						<State Name="birthday" ID="{B3CF26A8-20DC-4D12-BCBB-276EEDE75B21}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="chill" ID="{82D486A0-570E-4C01-9F00-419AD38DD89F}"/>
+							<EndState Name="dark" ID="{5F550DFD-2C7E-4F2C-BD24-0A5D9FDA0E63}"/>
+							<Time>4</Time>
+							<IsShared>true</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="chill" ID="{82D486A0-570E-4C01-9F00-419AD38DD89F}"/>
+							<EndState Name="birthday" ID="{B3CF26A8-20DC-4D12-BCBB-276EEDE75B21}"/>
+							<Time>0</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

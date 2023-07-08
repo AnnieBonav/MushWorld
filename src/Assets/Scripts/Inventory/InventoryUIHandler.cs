@@ -12,7 +12,7 @@ public class InventoryUIHandler : MonoBehaviour
     [SerializeField] private GameObject _smallInventoryUI;
 
     private bool _bigInventoryOpened = false;
-    private bool _smallInventoryActive = false;
+    // private bool _smallInventoryActive = false; // TODO: Implement having active/inactive small inventory
 
     private int _selectedSlot = 0;
     public Grabbable SelectedGrabbable; // TODO: Change so the architecture is better. This is public so the Eyes visualizer can use it to spawn something  Should the inventory manager spawn it?
@@ -49,6 +49,11 @@ public class InventoryUIHandler : MonoBehaviour
     public void OnSwitchSelectedItem(InputValue value)
     {
         int inputValue = (int)value.Get<float>();
+        if(inputValue != 0)
+        {
+            AkSoundEngine.PostEvent("Play_HoverButton", gameObject);
+        }
+
         if(inputValue == 1 && _selectedSlot + 1 >= _inventorySlots.Count)
         {
             _selectedSlot = 0;

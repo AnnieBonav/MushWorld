@@ -30,17 +30,24 @@ public class UIHandler : MonoBehaviour
     {
         Cursor.visible = false;
         
-        _livesText.text = _livesAmount.ToString();
-        // Mushroom.CollectedMushroom += UpdateLives; // TODO: Change to hear from hearts collected
-        
+        if(_livesText != null)
+        {
+            _livesText.text = _livesAmount.ToString(); // TODO: Change so this is not awful
+        }
+        Absorbable.AbsorbedHeart += UpdateLives;
+
         /* _grabAndDrag.started += StartsGrabbing;
         _grabAndDrag.performed += StartsGrabbing;
         _grabAndDrag.canceled += StartsGrabbing;*/
 
         // _playerInput.actions.FindAction("SwitchSelectedItem").canceled += FinishedSwitchedSelectedItem;
+        _playerInput.actions.FindAction("Navigate").started += NavigateSound;
     }
 
-    
+    private void NavigateSound(InputAction.CallbackContext callback)
+    {
+        print("I woudl sound");
+    }
 
     private void FinishedSwitchedSelectedItem(InputAction.CallbackContext context)
     {
@@ -84,9 +91,9 @@ public class UIHandler : MonoBehaviour
         }
     }
 
-    private void UpdateLives(int lives)
+    private void UpdateLives()
     {
-        _livesAmount += lives;
+        _livesAmount ++;
         _livesText.text = _livesAmount.ToString();
     }
     public void ChangeToMainMenu()
@@ -97,13 +104,14 @@ public class UIHandler : MonoBehaviour
     // Navigates between the items on the inventory
     public void OnNavigate(InputValue value)
     {
-        print("Navigate was called. Current map: " + _playerInput.currentActionMap.name);
+        // print("Navigate" + EventSystem.current.currentSelectedGameObject.name);
+        // print("Navigate was called. Current map: " + _playerInput.currentActionMap.name);
         /*if(_playerInput.currentActionMap.name == "UI")
         {
             print("Bring back from onnavigate");
             SwitchActionMap();
         }*/
-        
+
         // _inventoryIsActive = false; // TODO: This disabling going through the inventory could be prettier than checking every time the player moves
         // ModifyInventory();
         // GameObject selectedGameObject = EventSystem.current.currentSelectedGameObject;

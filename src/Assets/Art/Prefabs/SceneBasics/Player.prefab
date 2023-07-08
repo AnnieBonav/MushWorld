@@ -127,8 +127,8 @@ GameObject:
   - component: {fileID: 1164769565}
   - component: {fileID: 1164769563}
   - component: {fileID: 1164769567}
-  - component: {fileID: 1164769569}
-  - component: {fileID: 1164769568}
+  - component: {fileID: 3563972951216440224}
+  - component: {fileID: 2924251748631707159}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1164769561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.024999976, z: 0.7399998}
+  m_LocalPosition: {x: 0.00000029802322, y: -0.024999976, z: 0.7399985}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1164769569
+--- !u!114 &3563972951216440224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -277,14 +277,14 @@ MonoBehaviour:
   m_listeners:
     initialListenerList: []
     useDefaultListeners: 1
-  isEnvironmentAware: 0
+  isEnvironmentAware: 1
   isStaticObject: 0
   m_positionOffsetData:
     KeepMe: 0
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &1164769568
+--- !u!114 &2924251748631707159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -440,8 +440,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ccc7a4983c94214f84b86e407792a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inventoryUIHandler: {fileID: 0}
   _rayLength: 50
   _origin: {fileID: 1750113457540182405}
+  _debugGrab: 0
 --- !u!120 &5579562303942014023
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -731,6 +733,8 @@ GameObject:
   - component: {fileID: 4928974888170716168}
   - component: {fileID: 4928974888170716175}
   - component: {fileID: 8866346237652504716}
+  - component: {fileID: 168668671471273435}
+  - component: {fileID: 237718494858385901}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -798,11 +802,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33a583baf233b648a3806eb800820e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lookSensitivity: 8
+  _lookSensitivity: 2
   _moveSensitivity: 1
   _moveSpeed: 40
   _jumpForce: 200
-  _grabDebug: 0
+  _footstepsEvent: Play_Footsteps
+  _initialPositionRoom: {x: 18, y: 22.4, z: -66}
+  _initialPositionWorld: {x: -32, y: 3, z: -45}
+--- !u!114 &168668671471273435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928974888170716659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4704bff59dc6ad647b773eac25522238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &237718494858385901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4928974888170716659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed00515978da6e246af7b90af2726161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
 --- !u!1 &4928974888846543791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,13 +1042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb1967e1a406ac42ad5d885ca374427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPool: {fileID: 0}
-  _ejectionPoint: {fileID: 1750113457540182405}
-  _weaponRange: 50
-  _displayLine: 0
-  _ejectProjectile: 1
-  _isReflecting: 0
-  _maxBounces: 5
 --- !u!1 &7622490399095182018
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ee8edf117bc2743a28e77b05da372e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anglePerSecond: 2
+  _anglePerSecond: 1
   _minX: 320
   _maxX: 40
 --- !u!114 &609982340

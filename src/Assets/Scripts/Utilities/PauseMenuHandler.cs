@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+// TODO: Just...clean up
 public class PauseMenuHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject _pauseMenu;
-    [SerializeField] private GameObject _backgroundUI;
-    [SerializeField] private Button _mainButton;
+    [SerializeField] private UIFacade _uiFacade;
 
     private bool _isPaused = false;
 
+    [SerializeField] private bool _debugVolumeChange = false;
+
     private void Awake()
     {
-        _pauseMenu.SetActive(false);
-        _backgroundUI.SetActive(false);
+        _uiFacade.PauseUI.SetActive(false);
+        _uiFacade.Background.SetActive(false);
     }
     public void OnPause(InputValue value)
     {
@@ -27,14 +29,14 @@ public class PauseMenuHandler : MonoBehaviour
         else
         {
             _isPaused = true;
-            EventSystem.current.SetSelectedGameObject(_mainButton.gameObject);
+            EventSystem.current.SetSelectedGameObject(_uiFacade.GoMainMenuInPauseButton);
         }
 
-        _pauseMenu.SetActive(_isPaused);
-        _backgroundUI.SetActive(_isPaused);
+        _uiFacade.PauseUI.SetActive(_isPaused);
+        _uiFacade.Background.SetActive(_isPaused);
     }
 
-    public void OnNavigatePause(InputValue value)
+    public void OnNavigatePause(InputValue value) // THis is not that clean but it helps mantain a separation of the UI interactions, because working with maps is Awful
     {
         Vector2 navigatePause = value.Get<Vector2>();
 
@@ -71,6 +73,7 @@ public class PauseMenuHandler : MonoBehaviour
             return;
         }
 
+        
         if(navigatePause.x == -1 && sliderSelected != null) // Slider is selected
         {
             sliderSelected.value = sliderSelected.value - 0.1f;
@@ -82,6 +85,5 @@ public class PauseMenuHandler : MonoBehaviour
             sliderSelected.value = sliderSelected.value + 0.2f;
             return;
         }
-        print("Navigated: " + navigatePause);
     }
 }

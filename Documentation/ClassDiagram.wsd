@@ -1,0 +1,108 @@
+class Grabbable {
+    - prefab : GameObject
+    ..
+    - soundEvent : string
+    ..
+    - getsDestroyed : bool
+    ..
+    + UISprite : Sprite
+    ..
+    {static} CollectedGrabbable: Action<Grabbable>
+    --
+    + SetDestroys() : void
+    + Grab() : void
+    # PlaySound() : void    
+}
+
+class EatFood {
+    - foodParent : GameObject
+    --
+    + Grab() : void
+}
+
+class Drink{
+    PlaySound() : void
+}
+
+class Mushroom {
+    - type : MyshroomType
+    ..
+    - points: int
+    -- 
+    DoAction() : void
+}
+
+Grabbable <|-- EatFood
+Grabbable <|-- Drink
+Grabbable <|-- Mushroom
+
+class EyesVisualizer {
+    - inventoryUIHandler : InventoryUIHandler
+    ..
+    - rayLength : float
+    ..
+    - origin : Transform
+    ..
+    - debugGrab : bool
+    ..
+    - trail : LineRenderer
+    ..
+    cameraOrigin : Vector3
+    ..
+    {static} ConsumedGrabbable: Action<Grabbable>
+    --
+    + OnGrab(InputValue) : void
+    + OnPlace(InputValue) : void
+}
+
+class MantainOnLoad {
+    - RemoveExisting(Scene, Scene)
+}
+
+class Cake {
+    - OnTriggerEnter(Collider) : void
+    - OnTriggerExit(Collider) : void
+}
+
+class Bullet {
+    - timeToLive : float
+    - speed : int
+    - damage : int
+    - paremtTransform : Transform
+    --
+    + Damage() : int
+    + Activate(Transform) : void
+    + Deactivate() : void
+    + Live() : IEnumerator
+}
+
+class RoomHandler {
+    - pot : GameObject
+    --
+    - HandlePotSound(bool) : void
+    - OnEnable()
+    - OnDisable()
+}
+
+class Rock {
+    - life : int
+    --
+    - GetDamaged(int) : void
+    - CheckStatus() : void
+    - OnCollisionEnter(Collision) : void
+}
+
+class River {
+    - soundEvent : string
+    --
+    - Start() : void
+    - PlaySound() : void
+}
+
+class HeartsSpawner {
+    
+}
+MonoBehaviour <|-- Bullet
+MonoBehaviour <|-- MantainOnLoad
+MonoBehaviour <|-- RoomHandler
+MonoBehaviour <|-- Rock

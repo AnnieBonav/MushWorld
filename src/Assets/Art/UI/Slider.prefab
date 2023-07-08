@@ -236,6 +236,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6545723312552127588}
   - component: {fileID: 113235382471658916}
+  - component: {fileID: 5511261491838711137}
+  - component: {fileID: 7535830168572037454}
   m_Layer: 0
   m_Name: Slider
   m_TagString: Untagged
@@ -316,7 +318,64 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7535830168572037454}
+        m_TargetAssemblyTypeName: SliderHandler, Assembly-CSharp
+        m_MethodName: UpdateValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5511261491838711137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989785603011099131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 9
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7535830168572037454}
+          m_TargetAssemblyTypeName: SliderHandler, Assembly-CSharp
+          m_MethodName: PlayNavigateSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7535830168572037454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989785603011099131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407fd6eae525503419b84119e23bffac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _selectSoundEvent: Play_SelectButton
+  _navigateSoundEffect: Play_HoverButton
+  _rtcpValueName: musicVolume
+  _slider: {fileID: 113235382471658916}
 --- !u!1 &8201794602147712152
 GameObject:
   m_ObjectHideFlags: 0

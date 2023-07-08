@@ -76,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455ebda5524906944b1b71e5b5cf2147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundEvent: 
+  _soundEvent: Play_Pop
   _grabParticle: {fileID: 1242778720887794744, guid: 00ebb58a5ed1d7a4198638a5f5933293,
     type: 3}
   _getsDestroyed: 0

@@ -35,7 +35,7 @@ public class InventoryManager : MonoBehaviour
 
     private void OnDisable()
     {
-        Grabbable.CollectedGrabbable -= ConsumeItem;
+        Grabbable.CollectedGrabbable -= AddItem;
         EyesVisualizer.ConsumedGrabbable -= ConsumeItem;
     }
 
@@ -46,12 +46,10 @@ public class InventoryManager : MonoBehaviour
         int currentAmount = _collectedGrabbables.Add(grabbable);
         if (currentAmount <= 0)
         {
-            print("Did not exist.");
             for (int i = 0; i < _inventorySlots.Count; i++)
             {
                 InventorySlot slot = _inventorySlots[i];
                 InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-                print("Item in slot: " + itemInSlot);
 
                 if (itemInSlot == null) // TODO: Change the logic because this smells?
                 {
@@ -66,7 +64,6 @@ public class InventoryManager : MonoBehaviour
         {
             InventorySlot slot = _inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
-            print("Item in slot: " + itemInSlot);
 
             if (itemInSlot != null && grabbable == itemInSlot.grabbable)
             {

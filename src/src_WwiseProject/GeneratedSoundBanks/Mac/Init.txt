@@ -1,0 +1,26 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	3991942870	music			\Default Work Unit\music	
+
+State	ID	Name	State Group			Notes
+	748895195	None	music			
+	1925914845	dark	music			
+	3049429082	birthday	music			
+	4294400669	chill	music			
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	2385628198	Footsteps			\Default Work Unit\Master Audio Bus\Footsteps	
+	3545700988	Reverbs			\Default Work Unit\Master Audio Bus\Reverbs	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	206373095	Room_Reverb			\Default Work Unit\Master Audio Bus\Reverbs\Room_Reverb	
+	3177428469	Cave_Reverb			\Default Work Unit\Master Audio Bus\Reverbs\Cave_Reverb	
+
+Effect plug-ins	ID	Name	Type				Notes
+	4496003	Dirty_Washing_Machine	Wwise RoomVerb			
+	3559982155	Hall_Stop_Screaming	Wwise RoomVerb			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

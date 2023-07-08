@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{E8A74582-8FCC-44CA-93F8-18EDEA4803F4}" SchemaVersion="103">
+	<MixingSessions>
+		<WorkUnit Name="Default Work Unit" ID="{E8A74582-8FCC-44CA-93F8-18EDEA4803F4}" PersistMode="Standalone">
+			<ChildrenList>
+				<MixingSession Name="default_session" ID="{0E26ED13-F43C-4D45-844C-0DDADA6CB183}">
+					<ObjectList>
+						<ObjectRef Name="Cave_Reverb" ID="{09B25D61-02C2-4026-AE70-70289C59CC7D}" WorkUnitID="{526A6CFF-26D4-4FA0-AF22-0413827B7AA3}"/>
+						<ObjectRef Name="Potions" ID="{6C6B9297-5122-48C7-A087-A02ABC131DC2}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="Pop" ID="{A0F4E3A7-DBCD-48CB-9B79-BD2A2CFE2FE6}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="GlassClink" ID="{ABACBD21-E9A9-42D1-85E6-59D663C23845}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="Footsteps" ID="{024BDA8C-12F2-47C2-B4A6-3097EEF94B1A}" WorkUnitID="{526A6CFF-26D4-4FA0-AF22-0413827B7AA3}"/>
+						<ObjectRef Name="Bubbles" ID="{0C5E5EC5-D131-4506-8A4A-A62DCAF5755F}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="Food" ID="{42F99A64-33C9-4DC3-B3CA-B80E66825AAF}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="River" ID="{5EBC3BCF-1861-40BB-8105-ED44A4D5D621}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="PlaceObject" ID="{A5391B6D-1D6A-434D-9CB9-807D9121ECBC}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="ChillBG" ID="{EDF0FF1B-B56C-464E-8EE0-9AE2C1957EF1}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+						<ObjectRef Name="DarkBG" ID="{C5D992F4-C1F4-4F96-A052-C770A54226F9}" WorkUnitID="{5988D122-DAEA-4285-AF35-CBB5E09C0B04}"/>
+					</ObjectList>
+				</MixingSession>
+			</ChildrenList>
+		</WorkUnit>
+	</MixingSessions>
+</WwiseDocument>
