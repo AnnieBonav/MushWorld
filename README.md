@@ -8,6 +8,8 @@ The main features that I implemented for this videogame were having a first pers
 #### Moving
 My first person controller is physics-based, meaning that the movement is done by adding a force to the rigidbody. Getting input from the user is done through the New Unity input system, where I map the controllers so that either mouse and keyboard or xbox controller can be used.
 
+** Mention more stuff about the implementation, like having serialized fields and stuff**
+
 #### Moving the head
 I decided having the player only be able to turn around (in yaw rotation), move horizontally, and jumping was not enough. I wanted the player to be able to move the head too (in pitch) like in real life when we move the chin down and up. To accomplish that, I needed to change the way that my character was made, so that it had independend head and body. The head was a child of the body and would also hear the input, so that it could rotate by itself, I also made it in a way that there was a minimum and a maximum rotation, so that it could not go beyond these and it would mantain integrity.
 
@@ -23,6 +25,9 @@ So I chnaged it so instead of them being automatically collected, you needed to 
 
 If the raycast does find a grabbable, each of the grabbables will do what they need. The mushrooms will start with the process of being added into the inventory, the galsses wiull sound "clink", the cakes will start being eaten...
 
+#### Puff
+Also, after removing mushrooms that you have already placed, tghey emmit a particle, so that there is both a visula and a sound representation of the action.
+
 ### Inventory
 When I decided to have an inventory I did not know how hard it was going to be. First, I needed a way to know which item I was collecting, and making it have a 2d representation for the inventory UI. Then, I needed to let the inventory know that something needed to be added, but checking whether it had been added before or not. Because if it had been added, I needed to raise the number in the current slot that had that colletcible. But if it had not been added before, I needed to find which was the next available slot (from left to right) and then add the new collectible slot with the 2d representation of the mushroom that was collected.
 
@@ -36,8 +41,15 @@ Most of the 3D models that I used at the beginning of my development were made b
 
 #### Shaders
 I used this project as an oppirtunity to try-out my shaders skills, and you can see it on the lake. The water of the lake has a material that uses a shader that I made. It has displacemenet of the vertices based on wave funcitons (so it looked like the water was moving), a noice map that goes trhough it (so there are shadows), some colour change, and shift using time and other funcitons. Even though this might have been completely unnecesarry, it was super cool implementing it, and it looks pretty chill.
+
+#### Skybox
+The skybox also works with a shader. Even though I did not invent it, I used it as a base to learn from it and was able to modify the parameters and colours so it fit what I wanted.
+
 ### Audio implementation
-For the audio implementation I used wwise, and I made sure that everything that should sound, sounded.
+For the audio implementation I used wwise, and I made sure that everything that should sound, sounded. Besides adding the normal backrgouns music and SFX for walking, i also have others that take into consideration the distance that my character has from the object that is emmitting the sound. I also have a section of my game where there is a cake and if you enter the trigger the mexican song of happy birthday sounds.
+
+### Changing scene
+Another one of the sound changes that I have is whenever I enter to my second scene, there is a change in the background music, in reverb, in the way thay you interact with the objects inside... All of teh composition of teh game I made, but the one I like the most is this second scene, as it looks pretty cool. I made sure to use differet light settings to give a complete different feeling than outside.
 
 ## Modeling
 I decided to model all of my assets, to put into practice **blender**. For that, I have created multiple nature low-poly models, as well as materials (directly in Unity).

@@ -10290,10 +10290,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9e89cc2afb3744994fc62eea14fdac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundEvent: Play_GlassClink
-  _grabParticle: {fileID: 0}
-  _getsDestroyed: 1
-  UISprite: {fileID: 0}
 --- !u!4 &1049388881
 Transform:
   m_ObjectHideFlags: 0
