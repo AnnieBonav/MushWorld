@@ -10,6 +10,7 @@ public class InventoryUIHandler : MonoBehaviour
     [SerializeField] private GameObject _bigInventoryUI;
     [SerializeField] private GameObject _backgroundUI;
     [SerializeField] private GameObject _smallInventoryUI;
+    [SerializeField] private List<InventorySlot> _inventorySlots; // Duplicated from InventoryManager, good to have to make it work
 
     private bool _bigInventoryOpened = false;
     // private bool _smallInventoryActive = false; // TODO: Implement having active/inactive small inventory
@@ -17,7 +18,6 @@ public class InventoryUIHandler : MonoBehaviour
     private int _selectedSlot = 0;
     public Grabbable SelectedGrabbable; // TODO: Change so the architecture is better. This is public so the Eyes visualizer can use it to spawn something  Should the inventory manager spawn it?
 
-    [SerializeField] private List<InventorySlot> _inventorySlots; // Duplicated from InventoryManager, good to have to make it work
 
     private void Awake()
     {

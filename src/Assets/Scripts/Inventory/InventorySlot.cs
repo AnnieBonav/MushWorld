@@ -7,11 +7,6 @@ using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour
 {
-    private void Awake()
-    {
-
-    }
-
     private void CheckIfGrabbed(GameObject itemGrabbed)
     {
         if(gameObject == itemGrabbed)
